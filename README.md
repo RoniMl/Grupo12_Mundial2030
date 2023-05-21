@@ -1,6 +1,6 @@
 #  Página web del mundial 2030
 
-###Proyecto en desarrollo
+Proyecto en desarrollo
 
 ## <ins>**Descripción del proyecto**<ins/>
 
@@ -17,13 +17,13 @@ La página web Mundial 2030 es un proyecto enfocado en brindar a los fanáticos 
 
 ### <ins>**Mockups del proyecto**<ins/>
 
-| Mockup 1      | Mockup 2      | Mockup 3      | Mockup 4      |
-| ------------- | ------------- | ------------- | ------------- |
-| ![Mockup1](https://i.postimg.cc/dvB7hHrq/Mockup1.png "Mockup1") | ![Mockup2](https://i.postimg.cc/LR69bHgp/Mockup2.png "Mockup2") | ![Mockup3](https://i.postimg.cc/VYWwKTYv/Mockup3.png "Mockup3") | ![Mockup4](https://i.postimg.cc/nFVJgkzk/Mockup4.png "Mockup4") |
+| Pagina principal| Estadios  | Fanaticos      | Paises organizadores      | Sobre el proyecto      |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| ![Mockup0](https://i.postimg.cc/rcYnVyhc/Mockup0.png "Mockup0") | ![Mockup1](https://i.postimg.cc/dvB7hHrq/Mockup1.png "Mockup1") | ![Mockup2](https://i.postimg.cc/LR69bHgp/Mockup2.png "Mockup2") | ![Mockup3](https://i.postimg.cc/VYWwKTYv/Mockup3.png "Mockup3") | ![Mockup4](https://i.postimg.cc/nFVJgkzk/Mockup4.png "Mockup4") |
 
-| Mockup 5      | Mockup 6     | Mockup 7      | Mockup 8     |
+| Equipos      | Horarios     | Compra de entradas      | Nuestros valores    | Prode     |
 | ------------- | ------------- | ------------- | ------------- |
-| ![Mockup5](https://i.postimg.cc/hcQf2SNG/Mockup5.png "Mockup5") | ![Mockup6](https://i.postimg.cc/dqw3QG37/Mockup6.png "Mockup6") | ![Mockup7](https://i.postimg.cc/R4tZcgn6/Mockup7.png "Mockup7") | ![Mockup8](https://i.postimg.cc/Pdzf7Nyd/Mockup8.png "Mockup8") |
+| ![Mockup5](https://i.postimg.cc/hcQf2SNG/Mockup5.png "Mockup5") | ![Mockup6](https://i.postimg.cc/dqw3QG37/Mockup6.png "Mockup6") | ![Mockup7](https://i.postimg.cc/R4tZcgn6/Mockup7.png "Mockup7") | ![Mockup8](https://i.postimg.cc/Pdzf7Nyd/Mockup8.png "Mockup8") | ![Mockup9](https://i.postimg.cc/PtPbF1jw/Mockup9.png "Mockup9") |
 
 ### <ins>**Tecnologías utilizadas**<ins/>
 -  Javascript
