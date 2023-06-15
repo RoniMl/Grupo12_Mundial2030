@@ -1,81 +1,154 @@
 <!DOCTYPE html>
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mundial 2030</title>
-  <link href="/css/styles.css" rel="stylesheet" />
-  <script
-    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"
-  ></script>
-</head>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mundial 2030</title>
+    <link href="/css/styles.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-<body>
-  <header>
-    <div class="logo">
-      <img height="100px" src="/img/logo mundial.jpg" />
-    </div>
-    <div>
-      <ul class="menu-header">
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/tickets">Tickets</a></li>
-        <li><a href="/login">Log in</a></li>
-        <li><a href="/mis-entradas">Mis entradas</a></li>
-      </ul>
-    </div>
-    <div class="header-abajo">
-      <div>
-        <a href="/uruguay">
-          <img class="banderas" src="\img\bandera uruguay.png"
-        /></a>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="/"><img height="100px" src="/img/logo mundial.jpg" /></a>
       </div>
       <div>
-        <a href="/chile"
-          ><img class="banderas" src="\img\bandera chile.png"
-        /></a>
+        <ul class="menu-header">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/tickets">Tickets</a></li>
+          <li><a href="/login">Log in</a></li>
+          <li><a href="/mis-entradas">Mis entradas</a></li>
+        </ul>
       </div>
-      <div>
-        <a href="/argentina"
-          ><img class="banderas" src="\img\bandera argentina.png"
-        /></a>
+      <div class="header-abajo col-12">
+        <div>
+          <a href="/uruguay">
+            <img class="banderas" src="\img\bandera uruguay.png"
+          /></a>
+        </div>
+        <div>
+          <a href="/chile"
+            ><img class="banderas" src="\img\bandera chile.png"
+          /></a>
+        </div>
+        <div>
+          <a href="/argentina"
+            ><img class="banderas" src="\img\bandera argentina.png"
+          /></a>
+        </div>
+        <div>
+          <a href="/paraguay"
+            ><img class="banderas" src="\img\bandera paraguay.png"
+          /></a>
+        </div>
       </div>
-      <div>
-        <a href="/paraguay"
-          ><img class="banderas" src="\img\bandera paraguay.png"
-        /></a>
+    </header>
+    <main>
+      <img class="copa-del-mundo" src="\img\Copa del mundo2.png" />
+      <div class="tiempo">
+        <h2>Tiempo hasta el saque inicial: xx:xx:xx:xx</h2>
       </div>
+      <div class="boxes">
+        <div class="card" id="noticias">
+          <img class="imagen-card" src="\img\noticias 1.jpeg" />
+          <h3>Descubri todas las noticias sobre el mundial!</h3>
+        </div>
+        <div class="card" id="cancion">
+          <img class="imagen-card" src="\img\cancion mundial.jpeg" />
+          <h3>Escucha la cancion oficial del mundial!</h3>
+        </div>
+        <div class="card" id="arte">
+          <img class="imagen-card" src="\img\arte mundial.jpeg" />
+          <h3>Mira todo el arte de los fan!</h3>
+        </div>
+        <div class="card" id="mascota">
+          <img class="imagen-card" src="\img\mascota mundial.jpeg" />
+          <h3>Conoce a la mascota del mundial!</h3>
+        </div>
+        <br />
+      </div>
+      <div class="conoce col-10" id="conoce-estadios">
+        <div>
+          <h1>Conoce los estadios!</h1>
+          <p>
+            Conoce los magicos lugares que acompañan nuestra pasión centenaria,
+            como llegar a los mismos, su historia y algunos datos!
+          </p>
+        </div>
+        <img src="/img/estadio centenario mundial.jpeg" />
+      </div>
+
+      <div class="conoce col-10 offset-2" id="conoce-equipos">
+        <img src="/img/seleccion argentina.webp" />
+        <div>
+          <h1>Conoce los a equipos!</h1>
+          <p>
+            Conoce los magicos lugares que acompañan nuestra pasión centenaria,
+            como llegar a los mismos, su historia y algunos datos!
+          </p>
+        </div>
+      </div>
+
+      <div class="conoce col-10" id="conoce-fanaticos">
+        <div>
+          <h1>Fanaticos!</h1>
+          <p>Para todos los fanaticos del mundo</p>
+        </div>
+        <img src="/img/hinchada chile.jpeg" />
+      </div>
+      <div class="conoce col-10 offset-2" id="conoce-valores">
+        <img src="/img/paraguay himno.jpeg" />
+        <div>
+          <h1>Conoce nuestros valores!</h1>
+          <p>
+            Nuestro compromiso es en todos los aspectos, asi vivimos el futbol y
+            el mundial
+          </p>
+        </div>
+      </div>
+
+      <div class="conoce col-10" id="conoce-prode">
+        <div>
+          <h1>Prode Mundialista!</h1>
+          <p>
+            Animate al prode y gana premios increibles desde remeras e
+            indumentaria hasta unos boletos para ir a ver la gran final!
+          </p>
+        </div>
+        <img src="/img/premios prode.png" />
+      </div>
+    </main>
+    <footer class="footer">
+    <h3>
+      Main Sponsors
+    </h3>
+    <div class="sponsors">
+      <div ><a href="https://www.adidas.es/futbol"><img src="/img/adidas-logo.webp"  height="106px" width="126px"></a></div>
+      <div ><a href="https://www.cocacoladeargentina.com.ar/"><img src="/img/logo cocacola.png" height="106px" width="126px"></a></div>
+      <div><a href="https://www.wanda-group.com/"><img src="/img/logo wanda.png" height="106px" width="126px"></a></div>
+      <div ><a href="https://www.hyundai.com/"><img src="/img/logo hiundai.webp" height="106px" width="126px"></a></div>
+      
     </div>
-  </header>
-  <main>
-    <img class="copa-del-mundo" src="\img\Copa del mundo2.png" />
-    <div class="tiempo">
-      <h2>Tiempo hasta el saque inicial: xx:xx:xx:xx</h2>
-    </div>
-    <div class="boxes">
-      <div class="card" id="noticias">
-        <img class="imagen-card" src="\img\noticias 1.jpeg" />
-        <h3>Descubri todas las noticias sobre el mundial!</h3>
-      </div>
-      <div class="card" id="cancion">
-        <img class="imagen-card" src="\img\cancion mundial.jpeg" />
-        <h3>Escucha la cancion oficial del mundial!</h3>
-      </div>
-      <div class="card" id="arte">
-        <img class="imagen-card" src="\img\arte mundial.jpeg" />
-        <h3>Mira todo el arte de los fan!</h3>
-      </div>
-      <div class="card" id="mascota">
-        <img class="imagen-card" src="\img\mascota mundial.jpeg" />
-        <h3>Conoce a la mascota del mundial!</h3>
-      </div>
-    </div>
-    <div></div>
-  </main>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
-    integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
-    crossorigin="anonymous"
-  ></script>
-</body>
+    
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
