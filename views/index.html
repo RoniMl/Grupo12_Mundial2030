@@ -22,6 +22,10 @@
   </head>
 
   <body>
+    <!--Estos 3 inputs son los que controlan el popup de login/registro, deben colocarse aqui para que funcionen de forma global-->
+    <input class="cajitaOculta" type="radio" id="nada" name="Usuario" value="nada" checked>
+    <input class="cajitaOculta" type="radio" id="login" name="Usuario" value="login">
+    <input class="cajitaOculta" type="radio" id="registro" name="Usuario" value="registro">
     <header>
       <div class="logo">
         <a href="/"><img height="100px" src="/img/logo mundial.jpg" /></a>
@@ -30,7 +34,8 @@
         <ul class="menu-header">
           <li><a href="/">Inicio</a></li>
           <li><a href="/tickets">Tickets</a></li>
-          <li><a href="/login">Log in</a></li>
+          <li><label class="palabrasLoginRegistro" for="login">Login</label></li>
+          <li><label class="palabrasLoginRegistro" for="registro">Registro</label></li>
           <li><a href="/mis-entradas">Mis entradas</a></li>
         </ul>
       </div>
@@ -150,5 +155,72 @@
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
     ></script>
+
+    <!-- LOGIN Y REGISTRO OCULTOS los deje por debajo de todo lo demas para que no interrumpa el resto del html-->
+    <div class="loginOculto ocultos">
+      <div class="UsuarioFormulario">
+          <div class="formBarra">
+              <h5>INGRESAR!</h5>
+              <label for="nada">X</label>
+          </div>
+
+          <form class="FormInputs">
+              <label for="email">Email: </label>
+              <input type="email" name="email" id="email">
+              <br>
+              <label for="password">Contraseña: </label>
+              <input type="password" name="pass" id="password">
+              <br>
+
+              <div><label for="recordarme">Recordarme:</label>
+                  <input type="checkbox" id="recordarme">
+              </div>
+              <br>
+              <br>
+              <button type="submit"> Ingresar</button>
+          </form>
+
+      </div>
+  </div>
+
+  <div class="registroOculto ocultos">
+      <div class="UsuarioFormulario">
+          <div class="formBarra">
+              <h5>REGISTRARSE!</h5>
+              <label for="nada">X</label>
+          </div>
+
+          <form class="FormInputs">
+              <label for="nombre">Nombre: </label>
+              <input type="text" name="nombre" id="nombre">
+              <br>
+              <label for="apellido">Apellido: </label>
+              <input type="text" name="apellido" id="apellido">
+              <br>
+              <label for="correo">Correo: </label>
+              <input type="email" name="correo" id="correo">
+              <br>
+              <label for="telefono">Telefono: </label>
+              <input type="tel" name="telefono" id="telefono">
+              <br>
+              <label for="fechaDeNacimiento">Fecha de nacimiento: </label>
+              <input type="date" name="fechaDeNacimiento" id="fechaDeNacimiento">
+              <br>
+              
+
+              <div><label for="aceptarTerminos">Acepto los terminos y condiciones:</label>
+                  <input type="checkbox" id="aceptarTerminos">
+              </div>
+              <br>
+              <br>
+              <button type="submit"> Registrarse</button>
+          </form>
+      </div>
+  </div>
+
+  <div class="difuminadorTotal">
+      <label for="nada"></label>
+  </div>
+  <!--FIN DE LOGIN Y REGISTRO OCULTOS-->
   </body>
 </html>
