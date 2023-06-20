@@ -307,7 +307,7 @@
   }
 }
 
-@media screen and (max-width: 964px) {
+@media screen and (max-width: 963px) {
   .imagenLoginRegistro{
     display: none;
   }
@@ -325,3 +325,40 @@
 }
 
 /*FIN DE ELEMENTOS PARA EL LOGIN Y REGISTRO -----------------------------*/
+
+/*TICKETS----------------------------*/
+
+.compraEntradas{
+  background-color: #EAEAEA;
+  padding-top: 15px;
+  padding-bottom: 30px;
+}
+
+
+.compraEntradas h2{
+  text-align: center;
+  padding-top: 20px;
+}
+
+.compraEntradas form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formularioInfoPago,
+.resumenEntradas,
+.formularioCompra{
+  background-color: lightblue;
+  padding: 20px;
+  max-width: 80%;
+  margin: 0 auto;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+.formularioCompra form select,
+.formularioCompra form input{
+  margin-bottom: 10px;
+}
+
+
+/*FIN DE TICKETS --------------------------------*/
