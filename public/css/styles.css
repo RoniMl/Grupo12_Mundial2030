@@ -207,13 +207,9 @@
 
 /*ELEMENTOS PARA EL LOGIN Y REGISTRO -----------------------------*/
 .UsuarioFormulario {
-  border-radius: 10px;
-  border: 1px solid black;
   background-color: rgba(136, 136, 136, 0.9);
-
-
-
 }
+
 .FormInputs {
   display: flex;
   flex-direction: column;
@@ -226,8 +222,7 @@
 
 .formBarra {
   background-color: rgba(50, 98, 149, 0.9);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 8px;
   display: flex;
   justify-content: space-between; 
   align-items: center;
@@ -259,6 +254,8 @@
   left: 50%;
   z-index: 20;
   transform: translate(-50%, -50%);
+  border-radius: 10px;
+  border: 1px solid black;
 
 }
 
@@ -279,9 +276,21 @@
   height: 100%;
 }
 
+
+.imagenLoginRegistro img{
+  width: 60vw;
+  height: 100%; 
+  opacity: 0.8;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+
+
+
 #registro:checked ~ .registroOculto,
 #login:checked~.loginOculto {
-  display: inline-block;
+  display: flex;
   animation: fadeIn 0.3s ease forwards;  
 }
 
@@ -297,6 +306,23 @@
   to {
       opacity: 1;
   }
+}
+
+@media screen and (max-width: 964px) {
+  .imagenLoginRegistro{
+    display: none;
+  }
+
+  .UsuarioFormulario{
+  border-radius: 10px;
+  border: 1px solid black;
+  }
+
+  .formBarra{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
 }
 
 /*FIN DE ELEMENTOS PARA EL LOGIN Y REGISTRO -----------------------------*/
