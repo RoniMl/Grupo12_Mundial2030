@@ -2,7 +2,7 @@
   "name": "grupo12_mundial2030",
   "version": "1.0.0",
   "description": "La página web Mundial 2030 es un proyecto enfocado en brindar a los fanáticos del fútbol una experiencia virtual inmersiva del posible Mundial de la FIFA que se llevará a cabo en el año 2030. A través de esta plataforma, los usuarios podrán explorar información detallada sobre los equipos participantes, los estadios, los jugadores destacados y los partidos programados.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
