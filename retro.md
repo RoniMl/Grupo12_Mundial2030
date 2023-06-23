@@ -40,7 +40,7 @@
 
 /Sprint 2/
 
-- Tiempo de entrga 
+- Tiempo de entrga. 
 - 
 
 
