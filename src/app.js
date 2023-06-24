@@ -1,19 +1,21 @@
 const express = require("express");
 const path = require("path");
 
+const indexRoutes = require("./routes/indexRoutes");
+const anfitrionesRoutes = require("./routes/anfitrionesRoutes");
+
 const app = express();
 
 app.use(express.static(path.join(__dirname, "/public")));
+
+app.use("/", indexRoutes);
+app.use("/anfitriones", anfitrionesRoutes)
 
 app.listen(3002, function () {
   console.log("Servidor corriendo");
 });
 
-app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/views/index.html"); // Permite enviar texto o codigo HTML
-});
-
-app.get("/tickets", (req, res) => {
+/* app.get("/tickets", (req, res) => {
   res.sendFile(__dirname + "/views/tickets.html"); // Permite enviar texto o codigo HTML
 });
 
@@ -60,3 +62,4 @@ app.get("/prode", (req, res) => {
 app.get("/valores", (req, res) => {
   res.sendFile(__dirname + "/views/valores.html"); // Permite enviar texto o codigo HTML
 });
+ */
