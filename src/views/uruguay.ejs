@@ -21,37 +21,42 @@
     />
   </head>
   <body>
+     <!--Estos 3 inputs son los que controlan el popup de login/registro, deben colocarse aqui para que funcionen de forma global-->
+     <input class="cajitaOculta" type="radio" id="nada" name="Usuario" value="nada" checked>
+     <input class="cajitaOculta" type="radio" id="login" name="Usuario" value="login">
+     <input class="cajitaOculta" type="radio" id="registro" name="Usuario" value="registro">
     <header>
       <div class="logo">
-        <a href="/"><img height="100px" src="/img/logo mundial.jpg" /></a>
+        <a href="/"><img height="100px" src="https://dhgrupo12ad.alwaysdata.net/logoMundial.jpg" /></a>
       </div>
       <div>
         <ul class="menu-header">
           <li><a href="/">Inicio</a></li>
           <li><a href="/tickets">Tickets</a></li>
-          <li><a href="/login">Log in</a></li>
+          <li><label class="palabrasLoginRegistro" for="login">Login</label></li>
+          <li><label class="palabrasLoginRegistro" for="registro">Registro</label></li>
           <li><a href="/mis-entradas">Mis entradas</a></li>
         </ul>
       </div>
       <div class="header-abajo col-12">
         <div>
           <a href="/uruguay">
-            <img class="banderas" src="/img/bandera uruguay.png"
+            <img class="banderas" src="https://dhgrupo12ad.alwaysdata.net/banderaUruguay.png"
           /></a>
         </div>
         <div>
           <a href="/chile"
-            ><img class="banderas" src="/img/bandera chile.png"
+            ><img class="banderas" src="https://dhgrupo12ad.alwaysdata.net/banderaChile.png"
           /></a>
         </div>
         <div>
           <a href="/argentina"
-            ><img class="banderas" src="/img/bandera argentina.png"
+            ><img class="banderas" src="https://dhgrupo12ad.alwaysdata.net/banderaArgentina.png"
           /></a>
         </div>
         <div>
           <a href="/paraguay"
-            ><img class="banderas" src="/img/bandera paraguay.png"
+            ><img class="banderas" src="https://dhgrupo12ad.alwaysdata.net/banderaParaguay.png"
           /></a>
         </div>
       </div>
@@ -66,21 +71,21 @@
           <div class="carousel-item active" data-bs-interval="10000">
             <img
               height="500px"
-              src="/img/paisaje uruguay1.jpg"
+              src="https://dhgrupo12ad.alwaysdata.net/paisajeUruguay1.jpg"
               class="d-block w-100"
             />
           </div>
           <div class="carousel-item" data-bs-interval="2000">
             <img
               height="500px"
-              src="/img/paisaje uruguay2.jpg"
+              src="https://dhgrupo12ad.alwaysdata.net/paisajeUruguay2.jpg"
               class="d-block w-100"
             />
           </div>
           <div class="carousel-item">
             <img
               height="500px"
-              src="/img/paisaje uruguay3.jpg"
+              src="https://dhgrupo12ad.alwaysdata.net/paisajeUruguay3.jpg"
               class="d-block w-100"
             />
           </div>
@@ -218,7 +223,7 @@
 
       <div class="card-group">
         <div class="card">
-          <img src="/img/uruguay campeon 30.jpg" class="card-img-top" />
+          <img src="https://dhgrupo12ad.alwaysdata.net/uruguayCampeon30.jpg" class="card-img-top" />
           <div class="card-body">
             <h5 class="card-title">Primer campeon mundial 1930</h5>
             <p class="card-text">
@@ -238,7 +243,7 @@
           </div>
         </div>
         <div class="card">
-          <img src="/img/uruguay campeon 50.jpg" class="card-img-top" />
+          <img src="https://dhgrupo12ad.alwaysdata.net/uruguayCampeon50.jpg" class="card-img-top" />
           <div class="card-body">
             <h5 class="card-title">Campeones 1950</h5>
             <p class="card-text">
@@ -263,7 +268,7 @@
           </div>
         </div>
         <div class="card">
-          <img src="/img/uruguay campeon 11.jpg" class="card-img-top" />
+          <img src="https://dhgrupo12ad.alwaysdata.net/uruguayCampeon11.jpg" class="card-img-top" />
           <div class="card-body">
             <h5 class="card-title">El maximo ganador de Copa America</h5>
             <p class="card-text">
@@ -283,6 +288,79 @@
         </div>
       </div>
     </main>
+       <!-- LOGIN Y REGISTRO OCULTOS los deje por debajo de todo lo demas para que no interrumpa el resto del html-->
+       <div class="loginOculto ocultos">
+        <div class="UsuarioFormulario">
+            <div class="formBarra">
+                <h5>INGRESAR!</h5>
+                <label for="nada">X</label>
+            </div>
+  
+            <form class="FormInputs">
+                <label for="email">Email: </label>
+                <input type="email" name="email" id="email">
+                <br>
+                <label for="password">Contraseña: </label>
+                <input type="password" name="pass" id="password">
+                <br>
+  
+                <div><label for="recordarme">Recordarme:</label>
+                    <input type="checkbox" id="recordarme">
+                </div>
+                <br>
+                <br>
+                <button type="submit"> Ingresar</button>
+            </form>
+        </div>
+        <div class="imagenLoginRegistro"><img src="https://dhgrupo12ad.alwaysdata.net/ImagenLoginRegistro.jpg"></div>
+    </div>
+  
+    <div class="registroOculto ocultos">
+        <div class="UsuarioFormulario">
+            <div class="formBarra">
+                <h5>REGISTRARSE!</h5>
+                <label for="nada">X</label>
+            </div>
+  
+            <form class="FormInputs">
+                <label for="nombre">Nombre: </label>
+                <input type="text" name="nombre" id="nombre">
+                <br>
+                <label for="apellido">Apellido: </label>
+                <input type="text" name="apellido" id="apellido">
+                <br>
+                <label for="correo">Correo: </label>
+                <input type="email" name="correo" id="correo">
+                <br>
+                <label for="telefono">Telefono: </label>
+                <input type="tel" name="telefono" id="telefono">
+                <br>
+                <label for="fechaDeNacimiento">Fecha de nacimiento: </label>
+                <input type="date" name="fechaDeNacimiento" id="fechaDeNacimiento">
+                <br>
+                <label for="contrasena">Contraseña: </label>
+                <input type="password" name="contrasena" id="contrasena">
+                <br>
+                <label for="confirmarContrasena">Confirmar contraseña: </label>
+                <input type="password" name="confirmarContrasena" id="confirmarContrasena">
+                <br>
+                
+  
+                <div><label for="aceptarTerminos">Acepto los terminos y condiciones:</label>
+                    <input type="checkbox" id="aceptarTerminos">
+                </div>
+                <br>
+                <br>
+                <button type="submit"> Registrarse</button>
+            </form>
+        </div>
+        <div class="imagenLoginRegistro"><img src="https://dhgrupo12ad.alwaysdata.net/ImagenLoginRegistro.jpg"></div>
+    </div>
+  
+    <div class="difuminadorTotal">
+        <label for="nada"></label>
+    </div>
+    <!--FIN DE LOGIN Y REGISTRO OCULTOS-->
   </body>
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
