@@ -1,4 +1,4 @@
-const controller = require("../../controllers/anfitrionesControllers");
+const controller = require("./../controllers/anfitrionesControllers");
 
 const express = require("express");
 const controllerAnfitriones = require("../controllers/anfitrionesControllers");

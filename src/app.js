@@ -6,7 +6,7 @@ const anfitrionesRoutes = require("./routes/anfitrionesRoutes");
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, "/public")));
+app.use(express.static(path.join(__dirname, "../public")));
 
 app.use("/", indexRoutes);
 app.use("/anfitriones", anfitrionesRoutes)
