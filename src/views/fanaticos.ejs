@@ -3,165 +3,17 @@
 <head>
     <link rel="stylesheet" href="styles.css">
     <title>FIFA World Cup</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f2f2f2;
-            background-image: url("https://static1.pocketlintimages.com/wordpress/wp-content/uploads/144863-tv-news-how-to-watch-england-play-in-4k-image6-wxyhqlziap.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        
-        header {
-            background-color: #00529c;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        nav {
-            background-color: #0959b4;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
-        
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 10px;
-            padding: 5px;
-        }
-        
-        main {
-            padding: 20px;
-            animation: fadeIn 1s;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        h1 {
-            color: #000102;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        h3 {
-            color: #ffffff;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        
-        p {
-            color: #080000;
-            line-height: 3;
-            text-align: justify;
-            animation: slideInRight 1s;
-        }
-        
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        .image-container {
-            text-align: center;
-            margin-bottom: 30px;
-            animation: scaleIn 1s;
-        }
-        
-        @keyframes scaleIn {
-            from {
-                transform: scale(0);
-            }
-            to {
-                transform: scale(1);
-            }
-        }
-        
-        .image-container img {
-            max-width: 100%;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-        }
-        
-        .highlight {
-            background-color: #050000;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        
-        .highlight h2 {
-            color: #00529c;
-            margin-top: 0;
-        }
-        
-        .highlight p {
-            margin-top: 0;
-        }
-        
-        footer {
-            background-color: #ddd;
-            padding: 10px;
-            text-align: center;
-            animation: fadeIn 1s;
-        }
-        
-        footer p {
-            color: #666;
-            margin: 0;
-        }
-        .highlight img {
-        max-width: 300px;
-        border-radius: 10px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .side-images {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.side-images img {
-    max-width: 250px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-}
-    </style>
+    <link href="/css/fanaticos.css" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
 </head>
 <body>
     <header>
+
+    <%- include('loginRegistro') %> 
+    <%- include('header') %> 
     </header>
     
-    <nav>
-        <a href="#">Inicio</a>
-        <a href="#">Equipos</a>
-        <a href="#">Partidos</a>
-        <a href="#">Noticias</a>
-        <a href="#">Entradas</a>
-        <a href="#">Fanaticos</a>
-        <a href="#">Sobre nosotros</a>
-    </nav>
+    
     
     <main>
         <h1>Bienvenidos fanaticos del mundo!</h1>
@@ -203,7 +55,7 @@
     </main>
     
     <footer>
-        <p>&copy; 2030 FIFA World Cup. All rights reserved.</p>
+        <%- include('footer') %> 
     </footer>
 </body>
 </html>
