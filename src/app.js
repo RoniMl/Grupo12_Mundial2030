@@ -3,6 +3,7 @@ const path = require("path");
 
 const indexRoutes = require("./routes/indexRoutes");
 const anfitrionesRoutes = require("./routes/anfitrionesRoutes");
+const cardsRoutes = require("./routes/cardsRoutes")
 
 const app = express();
 
@@ -10,6 +11,7 @@ app.use(express.static(path.join(__dirname, "../public")));
 
 app.use("/", indexRoutes);
 app.use("/anfitriones", anfitrionesRoutes)
+app.use("/cards", cardsRoutes)
 
 app.listen(3002, function () {
   console.log("Servidor corriendo");
