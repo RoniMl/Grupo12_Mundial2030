@@ -22,30 +22,45 @@
   </head>
 
   <body>
-    <%- include('loginRegistro') %> 
-    <%- include('header') %>  
+    <%- include('loginRegistro') %> <%- include('header') %>
     <main>
-      <img class="copa-del-mundo" src="https://dhgrupo12ad.alwaysdata.net/CopaDelMundo2.png" />
+      <img
+        class="copa-del-mundo"
+        src="https://dhgrupo12ad.alwaysdata.net/CopaDelMundo2.png"
+      />
       <div class="tiempo">
         <h2>Tiempo hasta el saque inicial: xx:xx:xx:xx</h2>
       </div>
       <div class="boxes">
         <div class="card" id="noticias">
-          <img class="imagen-card" src="https://dhgrupo12ad.alwaysdata.net/noticias1.jpeg" />
+          <img
+            class="imagen-card"
+            src="https://dhgrupo12ad.alwaysdata.net/noticias1.jpeg"
+          />
           <h3>Descubri todas las noticias sobre el mundial!</h3>
         </div>
         <div class="card" id="cancion">
-          <img class="imagen-card" src="https://dhgrupo12ad.alwaysdata.net/cancionMundial.jpeg" />
+          <a href="https://www.youtube.com/watch?v=vyDjFVZgJoo">
+          <img
+            class="imagen-card"
+            src="https://dhgrupo12ad.alwaysdata.net/cancionMundial.jpeg"
+          />
           <h3>Escucha la cancion oficial del mundial!</h3>
-        </div>
-        <div class="card" id="arte"><a href="/cards/art">
-          <img class="imagen-card" src="https://dhgrupo12ad.alwaysdata.net/arteMundial.jpeg" />
-          <h3>Comparti tu arte con el mundo!</h3>
-        </a>
-          
+        </div></a>
+        <div class="card" id="arte">
+          <a href="/cards/comparti-tu-arte">
+            <img
+              class="imagen-card"
+              src="https://dhgrupo12ad.alwaysdata.net/arteMundial.jpeg"
+            />
+            <h3>Comparti tu arte con el mundo!</h3>
+          </a>
         </div>
         <div class="card" id="mascota">
-          <img class="imagen-card" src="https://dhgrupo12ad.alwaysdata.net/mascotaMundial.jpeg" />
+          <img
+            class="imagen-card"
+            src="https://dhgrupo12ad.alwaysdata.net/mascotaMundial.jpeg"
+          />
           <h3>Conoce a la mascota del mundial!</h3>
         </div>
         <br />
@@ -58,7 +73,9 @@
             como llegar a los mismos, su historia y algunos datos!
           </p>
         </div>
-        <img src="https://dhgrupo12ad.alwaysdata.net/estadioCentenarioMundial.jpeg" />
+        <img
+          src="https://dhgrupo12ad.alwaysdata.net/estadioCentenarioMundial.jpeg"
+        />
       </div>
 
       <div class="conoce col-10 offset-2" id="conoce-equipos">
@@ -73,11 +90,13 @@
       </div>
 
       <div class="conoce col-10" id="conoce-fanaticos">
-       <div>
+        <div>
           <h1>Fanaticos!</h1>
           <p>Para todos los fanaticos del mundo</p>
         </div>
-        <a href="/fanaticos"><img src="https://dhgrupo12ad.alwaysdata.net/hinchadaChile.jpeg" /></a>
+        <a href="/fanaticos"
+          ><img src="https://dhgrupo12ad.alwaysdata.net/hinchadaChile.jpeg"
+        /></a>
       </div>
       <div class="conoce col-10 offset-2" id="conoce-valores">
         <img src="https://dhgrupo12ad.alwaysdata.net/paraguayHimno.jpeg" />
@@ -101,7 +120,7 @@
         <img src="https://dhgrupo12ad.alwaysdata.net/premiosProde.png" />
       </div>
     </main>
-    <%- include('footer') %> 
+    <%- include('footer') %>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
