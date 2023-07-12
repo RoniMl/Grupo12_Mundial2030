@@ -7,17 +7,19 @@ const cardsRoutes = require("./routes/cardsRoutes");
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, "../public")));
 
+app.use(express.static(path.join(__dirname, "../public")));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use("/", indexRoutes);
 app.use("/anfitriones", anfitrionesRoutes);
 app.use("/cards", cardsRoutes);
 
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, '/views'));
+
 app.use((req,res,next)=>{
-    res.status(404).render("Not Found");
-})
+    res.send("pagina no encontrada")});
 
 app.listen(3002, function () {
   console.log("Servidor corriendo");
