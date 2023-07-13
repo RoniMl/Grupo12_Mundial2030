@@ -1,10 +1,10 @@
 const path = require("path");
 const fs = require("fs");
-const productsFilePath = path.join(__dirname, "../data/subir-art.json");
+const productsFilePath = path.join(__dirname, "../data/arte.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 const cardsControllers = {
   subirArt: (req, res) => {
-    res.render(path.join(__dirname + "../../views/subir-art.ejs"));
+    res.render(path.join(__dirname + "../../views/compartir.ejs"));
   },
   compartir: (req, res) => {
     let idNuevoProducto = products[products.length - 1].id + 1;
@@ -21,6 +21,21 @@ const cardsControllers = {
     res.redirect("/");
 
   },
+  arte: (req,res) => {
+    res.render(path.join(__dirname + "../../views/arte.ejs"));
+  },
+
+  //NO AUN
+  destroy : (req, res) => {
+		let idProducto = req.params.idProducto;
+
+		let nuevoArregloArte = products.filter(function(e){
+			return e.id != idProducto;
+		});
+				
+		fs.writeFileSync(productsFilePath, JSON.stringify(nuevoArregloArte,null,' '));	
+		res.redirect('/');
+	}
 };
 
 module.exports = cardsControllers;
