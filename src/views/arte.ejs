@@ -15,10 +15,11 @@
           </div>
         </a>
       </div>
+      <% for(let i = 0; i<arte.length; i++) { %>
       <div class="arteMain">
-        <div>
+         <div>
           <img
-            src="/img/Lionel-Messi-Argentina-2022-FIFA-World-Cup_(cropped).jpg"
+            src="/img/<%= arte[i].imagen%>"
             class="rounded"
             height="400px"
           />
@@ -34,7 +35,7 @@
               </button>
             </form>
 
-            <form action='/borrar/<%=arte.id%>?_method=DELETE'>
+            <form>
               <button type="button" class="btn btn-dark">
                 <i class="fa-solid fa-trash-can"></i>
               </button>
@@ -46,7 +47,8 @@
             </form>
           </div>
         </div>
-      </div>
+     </div>
+      <%  } %>
     </main>
     <footer><%- include("footer") %></footer>
   </body>

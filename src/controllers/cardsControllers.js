@@ -1,42 +1,35 @@
 const path = require("path");
 const fs = require("fs");
-const productsFilePath = path.join(__dirname, "../data/arte.json");
-const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+const arteFilePath = path.join(__dirname, "../data/arte.json");
+const arte = JSON.parse(fs.readFileSync(arteFilePath, "utf-8"));
+
 const cardsControllers = {
   subirArt: (req, res) => {
-    res.render(path.join(__dirname + "../../views/compartir.ejs"));
+    res.render("compartir");
   },
+
   compartir: (req, res) => {
-    let idNuevoProducto = products[products.length - 1].id + 1;
+    let idNuevoProducto = arte[arte.length - 1].id + 1;
+    let nombreImagen = req.file.filename;
     let nuevoArte = {
       id: idNuevoProducto,
       autor: req.body.autor,
       obra: req.body.obra,
       descripcion: req.body.descripcion,
       origen: req.body.origen,
-      categoria: req.body.categoria
+      categoria: req.body.categoria,
+      imagen: nombreImagen
     };
-    products.push(nuevoArte)
+    arte.push(nuevoArte);
 
-    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
-    res.redirect("/");
-
+    fs.writeFileSync(arteFilePath, JSON.stringify(arte, null, " "));
+    res.redirect("/cards/arte");
   },
-  arte: (req,res) => {
-    res.render(path.join(__dirname + "../../views/arte.ejs"));
+  arte: (req, res) => {
+    res.render("arte", { arte: arte });
   },
 
   //Borrar
-  destroy : (req, res) => {
-		let idProducto = req.params.idProducto;
-
-		let nuevoArregloArte = products.filter(function(e){
-			return e.id != idProducto;
-		});
-				
-		fs.writeFileSync(productsFilePath, JSON.stringify(nuevoArregloArte,null,' '));	
-		res.redirect('/');
-	}
 };
 
 module.exports = cardsControllers;

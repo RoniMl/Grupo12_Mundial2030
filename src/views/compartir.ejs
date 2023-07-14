@@ -16,7 +16,7 @@
       <div class="container products-wrapper formulario-subir">
         <div class="row">
           <div class="col-12">
-            <form action="/cards/comparti-tu-arte" method="POST">
+            <form action="/cards/arte/compartir" method="POST" enctype="multipart/form-data">
               <div class="row product-detail">
                 <div class="col-12 col-md-6">
                   <label for="name" class="form-label"
@@ -66,7 +66,7 @@
                 <label for="formFile" class="form-label"
                   >Seleccione el archivo que desea subir</label
                 >
-                <input class="form-control" type="file" id="formFile" />
+                <input class="form-control" name="imageProduct" type="file" id="formFile" />
               </div>
 
               <div class="col-12">
@@ -79,7 +79,9 @@
               </div>
 
               <div class="col-12">
-                <button type="submit" class="buy-now-button">Subir</button>
+              
+                  <button type="submit" class="buy-now-button">Subir</button>
+                
               </div>
             </form>
           </div>

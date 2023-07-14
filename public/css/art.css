@@ -27,12 +27,18 @@
 }
 .arteMain {
   margin-top: 1.5cm;
+  flex-direction: row;
   display: flex;
-  width: 100%;
-  height: 90%;
-  flex-flow: row;
-  justify-content: center;
   position: relative;
+  padding: 10px;
+  justify-content: center;
+  width: 99%;
+  gap: 3em;
+  flex-flow: row;
+  flex-wrap: wrap;
+  
+
+
 }
 
 .boton-compartir{
