@@ -14,6 +14,7 @@ const cardsControllers = {
       obra: req.body.obra,
       descripcion: req.body.descripcion,
       origen: req.body.origen,
+      categoria: req.body.categoria
     };
     products.push(nuevoArte)
 
@@ -25,7 +26,7 @@ const cardsControllers = {
     res.render(path.join(__dirname + "../../views/arte.ejs"));
   },
 
-  //NO AUN
+  //Borrar
   destroy : (req, res) => {
 		let idProducto = req.params.idProducto;
 

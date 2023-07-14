@@ -6,6 +6,15 @@
   <body>
     <header><%- include("header") %></header>
     <main>
+      <div>
+        <a href="/cards/arte/compartir">
+          <div class="d-grid boton-compartir">
+            <button class="btn btn-primary" type="button">
+              Comparti tu arte
+            </button>
+          </div>
+        </a>
+      </div>
       <div class="arteMain">
         <div>
           <img
@@ -13,18 +22,30 @@
             class="rounded"
             height="400px"
           />
-          <button type="button" class="btn btn-danger">
-            <i class="fa-regular fa-heart"></i>
-          </button>
-        </div>
-      </div>
+          <div class="botonesFotos">
+            <form>
+              <button type="button" class="btn btn-danger">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </form>
+            <form>
+              <button type="button" class="btn btn-success">
+                <i class="fa-regular fa-pen-to-square"></i>
+              </button>
+            </form>
 
-      <div>
-        <a href="/cards/arte/compartir">
-          <button type="button" class="btn btn-primary btn-lg">
-            Comparti tu arte
-          </button></a
-        >
+            <form action='/borrar/<%=arte.id%>?_method=DELETE'>
+              <button type="button" class="btn btn-dark">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+            </form>
+            <form>
+              <button type="button" class="btn btn-info">
+                <i class="fa-solid fa-info" style="color: #ffffff"></i>
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     </main>
     <footer><%- include("footer") %></footer>

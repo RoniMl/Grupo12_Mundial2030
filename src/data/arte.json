@@ -4,7 +4,9 @@
     "autor": "",
     "obra": "",
     "descripcion": "",
-    "origen": ""
+    "origen": "",
+    "categoria":"",
+    "imagen": ""
     
   }
 ]

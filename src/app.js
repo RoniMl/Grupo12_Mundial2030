@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const multer = require("multer")
 
 const indexRoutes = require("./routes/indexRoutes");
 const anfitrionesRoutes = require("./routes/anfitrionesRoutes");
