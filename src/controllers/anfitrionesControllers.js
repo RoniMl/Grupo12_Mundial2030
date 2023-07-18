@@ -1,16 +1,16 @@
 const path = require('path')
 const controllerAnfitriones = {
     argentina: (req, res) => {
-        res.render(path.join(__dirname + "../../views/argentina.ejs")); 
+        res.render( "argentina"); 
       },
     uruguay: (req, res) => {
-      res.render(path.join(__dirname + "../../views/uruguay.ejs")); 
+      res.render( "uruguay"); 
     },
     chile: (req, res) => {
-      res.render(path.join(__dirname + "../../views/chile.ejs")); 
+      res.render( "chile"); 
     },
     paraguay: (req, res) => {
-      res.render(path.join(__dirname + "../../views/paraguay.ejs")); 
+      res.render( "paraguay"); 
     },
            
 }

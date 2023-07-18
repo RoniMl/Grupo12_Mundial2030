@@ -19,7 +19,7 @@ const storage = multer.diskStorage({
 });
 const uploadFile = multer({ storage: storage });
 
-//Comparir
+//Compartir
 router.get("/arte/compartir", cardsControllers.subirArt);
 router.post(
   "/arte/compartir",
@@ -29,9 +29,15 @@ router.post(
 
 //Detalles
 
+router.get("/detalles/:idArte", cardsControllers.detalles);
+
 //Editar
+
+router.get('/arte/editar/:idArte',cardsControllers.editarVista); 
+router.put('/arte/editar/:idArte',cardsControllers.editarArte); 
 
 //Borrar
 
+router.delete("/arte/editar/delete/:idArte",cardsControllers.destroy)
 
 module.exports = router;

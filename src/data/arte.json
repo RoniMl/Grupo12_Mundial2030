@@ -1,29 +1,12 @@
 [
+ 
  {
   "id": 0,
-  "autor": "",
-  "obra": "",
-  "descripcion": "",
-  "origen": "",
-  "categoria": "",
-  "imagen": "Lionel-Messi-Argentina-2022-FIFA-World-Cup_(cropped).jpg"
- },
- {
-  "id": 1,
   "autor": "Roni",
-  "obra": "Neymar",
-  "descripcion": "Gol de brasil",
-  "origen": "Argentina",
+  "obra": "Messi",
+  "descripcion": "El mejor de todos",
+  "origen": "Rosario",
   "categoria": "in-sale",
-  "imagen": "1689298499643ney,mar.jpg"
- },
- {
-  "id": 2,
-  "autor": "roni ",
-  "obra": "kiki",
-  "descripcion": "cebollita subcampeon ",
-  "origen": "paris",
-  "categoria": "visited",
-  "imagen": "1689298720080mbappe.jpg"
+  "imagen": "1689636612566Lionel-Messi-Argentina-2022-FIFA-World-Cup_(cropped).jpg"
  }
 ]

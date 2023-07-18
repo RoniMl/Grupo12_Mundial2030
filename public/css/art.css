@@ -29,15 +29,12 @@
   margin-top: 1.5cm;
   flex-direction: row;
   display: flex;
-  position: relative;
+  position:relative;
   padding: 10px;
   justify-content: center;
   width: 99%;
-  gap: 3em;
   flex-flow: row;
-  flex-wrap: wrap;
-  
-
+  gap:1em;
 
 }
 
