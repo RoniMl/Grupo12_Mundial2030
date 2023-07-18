@@ -29,7 +29,7 @@ router.post(
 
 //Detalles
 
-router.get("/detalles/:idArte", cardsControllers.detalles);
+router.get("/arte/detalles/:idArte", cardsControllers.detalles);
 
 //Editar
 
