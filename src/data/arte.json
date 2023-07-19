@@ -2,10 +2,19 @@
  {
   "id": 0,
   "autor": "Roni",
-  "obra": "Lionel ",
-  "descripcion": "Es el mejor del mundo, gano mas balones de oro que nadie y es campeon de todo",
-  "origen": "Miami",
+  "obra": "Messias ",
+  "descripcion": "10.06",
+  "origen": "Rosario",
   "categoria": "Foto",
   "imagen": "1689636612566Lionel-Messi-Argentina-2022-FIFA-World-Cup_(cropped).jpg"
+ },
+ {
+  "id": 1,
+  "autor": "Roni",
+  "obra": "Lautaro",
+  "descripcion": "El mejor delantero de la serie a",
+  "origen": "Buenos Aires",
+  "categoria": "",
+  "imagen": "1689729284001lautaro con la copa.jpg"
  }
 ]

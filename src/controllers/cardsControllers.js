@@ -10,7 +10,10 @@ const cardsControllers = {
   },
 
   compartir: (req, res) => {
-    let idNuevoProducto = arte[arte.length - 1].id + 1;
+    let idNuevoProducto = 0;
+    if (!arte.length){
+      idNuevoProducto = 0
+    } else {idNuevoProducto = arte[arte.length - 1].id + 1;}
     let nombreImagen = req.file.filename;
     let nuevoArte = {
       id: idNuevoProducto,
