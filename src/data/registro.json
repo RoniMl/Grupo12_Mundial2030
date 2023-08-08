@@ -1,10 +1,11 @@
-{
-    "nombre": "",
-    "apellido":"" ,
-    "correo": "",
-    "telefono":"" ,
-    "nacimiento":"" ,
-    "contraseña":"" 
-       
-}
+[{
+    "id": 0,
+    "nombre": "Roni",
+    "apellido":"Malamud" ,
+    "correo": "ronimalamud@gmail.com",
+    "telefono":"1136343375" ,
+    "nacimiento":"11/10/2001" ,
+    "contrasena":"incorrecta" ,
+    "imagen":"1689729284001lautaro con la copa.jpg"     
+}]
 

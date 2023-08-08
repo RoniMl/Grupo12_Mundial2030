@@ -35,7 +35,7 @@
 
 .banderas {
   width: auto;
-  height: auto;
+  height: 100px;
 }
 
 .copa-del-mundo {
@@ -74,7 +74,13 @@
   color: white;
   align-content: center;
   height: auto;
+  margin-top: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: none;
 }
+
+
 
 .imagen-card {
   width: 320px;
@@ -190,6 +196,8 @@
   font-size: xx-large;
   color: blue;
 }
+
+
 @media screen and (min-width: 520px) {
   .menu-header {
     color: #326295;
@@ -237,6 +245,8 @@
     }
   
 }
+
+
 
 /*ELEMENTOS PARA EL LOGIN Y REGISTRO -----------------------------*/
 .UsuarioFormulario {

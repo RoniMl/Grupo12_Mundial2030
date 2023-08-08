@@ -15,6 +15,10 @@
 - Buena division del trabajo, cada uno sabia su parte
 - 
 
+/Sprint 3/
+
+- Lo hicimos rapido, lo entregamos rapido
+
 
 ## Cosas para mejorar:
 
@@ -30,6 +34,10 @@
 - Seguir mejorando la comunicacion 
 - Levantar un poco el ritmo para trabajar 
 
+/Sprint 3/
+
+- mejorar los nombres para que no sea una enredadera 
+
 ## Cosas que cambiar:
 
  /Sprint 1/
@@ -42,6 +50,10 @@
 
 - Tiempo de entrga. 
 - 
+
+/Sprint 3/
+
+- estetica del sitio o una armonia general 
 
 
 

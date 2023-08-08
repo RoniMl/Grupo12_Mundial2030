@@ -1,10 +1,17 @@
-const controller = require("./../controllers/indexControllers")
-
+const controllers = require("./../controllers/indexControllers")
 const express = require("express");
-const route = express.Router();
+const router = express.Router();
 
-route.get("/", controller.index);
-route.get("/fanaticos", controller.fanaticos);
-route.get("/tickets", controller.tickets);
+router.get("/", controllers.index);
+router.get("/fanaticos", controllers.fanaticos);
+router.get("/tickets", controllers.tickets);
+router.get('/loginRegistro', controllers.loginRegistro)
 
-module.exports = route;
+//Guardar nuevo Usuario
+
+router.post(
+    "/",
+    controllers.crearUsuario
+  );
+
+module.exports = router;
