@@ -10,8 +10,9 @@ router.get('/loginRegistro', controllers.loginRegistro)
 //Guardar nuevo Usuario
 
 router.post(
-    "/",
+    "/registro",
     controllers.crearUsuario
   );
 
 module.exports = router;
+
