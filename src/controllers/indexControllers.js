@@ -26,12 +26,12 @@ const controller = {
     let allUsers = this.findAll();
     let userFound = allUsers.find((u) => u.id == id);
     return userFound;
-  },
-  buscarPorCampo: function (field, text) {
+  }*/
+  buscarPorCampo: function (campo, texto) {
     let allUsers = this.findAll();
-    let userFound = allUsers.find((u) => u[field] == text);
+    let userFound = allUsers.find((u) => u[campo] == texto);
     return userFound;
-  },*/
+  },
   crearUsuario: (req, res) => {
     const errors = validationResult(req);
 
@@ -84,7 +84,6 @@ const controller = {
     }
   },
   validarLogin: (req, res) => {
-    const errors = validationResult(req);
     let correoInput = req.body.correo;
     let contrasenaInput = req.body.contrasena;
 
@@ -96,7 +95,6 @@ const controller = {
     }
 
     if(usuarioValido){
-      console.log("Buena credencial, envio al main devuelta");
       res.render("index");
     }else{
       errors.errors.push({
@@ -106,7 +104,6 @@ const controller = {
         path: '',
         location: ''
       });
-      console.log("mala credencial, envio al login devuelta");
       res.render("login", { errors: errors.array(), old: req.body });
     }
   },
