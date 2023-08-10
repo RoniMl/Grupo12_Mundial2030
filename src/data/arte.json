@@ -1,11 +1,20 @@
 [
-  {
-    "id": 1,
-    "autor": "Roni",
-    "obra": "Lautaro",
-    "descripcion": "El mejor delantero de la serie a",
-    "origen": "Buenos Aires",
-    "categoria": "",
-    "imagen": "1689729284001lautaro con la copa.jpg"
-  }
+ {
+  "id": 1,
+  "autor": "Roni",
+  "obra": "Lautaro",
+  "descripcion": "El mejor delantero de la serie a",
+  "origen": "Buenos Aires",
+  "categoria": "",
+  "imagen": "1689729284001lautaro con la copa.jpg"
+ },
+ {
+  "id": 2,
+  "autor": "Roni ",
+  "obra": "en cataratas",
+  "descripcion": "Una foto en las cataratas\r\n",
+  "origen": "iguazu",
+  "categoria": "in-sale",
+  "imagen": "1691611319425Fondopipis.png"
+ }
 ]

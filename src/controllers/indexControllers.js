@@ -40,13 +40,13 @@ const controller = {
     let nombreImagen = req.file.filename;
     let nuevoUsuario = {
       id: idNuevoUsuario,
-      nombre: req.body.nombre,
+      nombre: req.body.nombre, 
       apellido: req.body.apellido,
       correo: req.body.correo,
       telefono: req.body.telefono,
       nacimiento: ConvertTo.Daytime(req.body.nacimiento),
       contrasena: req.body.contrasena,
-      imagenPerfil: nombreImagen,
+      imagen: nombreImagen,
     };
     usuario.push(nuevousuario);
 
