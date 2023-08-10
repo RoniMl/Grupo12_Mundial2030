@@ -15,10 +15,10 @@
                 <%}) }%>
             <form class="FormInputs" action="/login" method="POST">
                 <label for="correo">Email: </label>
-                <input type="correo" name="correo" id="correo" value="<%= locals.old && old.correo ? old.correo : ''%>"/>
+                <input type="correo" name="correo" id="correo" value="<%= locals.old && old.correo ? old.correo : '' %>"/>
                 <br />
                 <label for="contrasena">Contraseña: </label>
-                <input type="contrasena" name="contrasena" id="contrasena" />
+                <input type="password" name="contrasena" id="contrasena" />
                 <br />
 
                 <div>

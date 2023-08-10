@@ -8,5 +8,15 @@
   "nacimiento": "11/10/2001",
   "contrasena": "incorrecta",
   "imagen": "1689729284001lautaro con la copa.jpg"
+ },
+ {
+  "id": 1,
+  "nombre": "Guillermo",
+  "apellido": "Rios",
+  "correo": "qweqdas@dasa",
+  "telefono": "213213",
+  "nacimiento": "2023-08-02",
+  "contrasena": "$2b$10$UV8MLYXFQ1lhK0/MkZDqvO30T9jK7KA79I3GTBK/SeBueyyutIRQ.",
+  "imagen": "169169805892522.jpg"
  }
 ]

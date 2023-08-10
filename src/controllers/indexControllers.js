@@ -87,26 +87,33 @@ const controller = {
     const errors = validationResult(req);
     let correoInput = req.body.correo;
     let contrasenaInput = req.body.contrasena;
-    for (let i = 0; i < usuario.length; i++) {
-      if ((correoInput == usuario.correo) && ((bcrypt.compareSync(constrasenaInput, usuario.contrasena)) == true)) {
-        res.render("/")
-      } else {
-        errors.errors.push({
-          type: '',
-          value: '',
-          msg: 'Credenciales invalidas',
-          path: '',
-          location: ''
-        });
-        res.render("login", {errors: errors.array(), old: req.body})
-      }
 
+    let usuarioValido = null;
+    for (let i = 0; i < usuario.length; i++) {
+      if ((correoInput == usuario[i].correo) && ((bcrypt.compareSync(contrasenaInput, usuario[i].contrasena)) == true)) {
+        usuarioValido = usuario[i];
+      }
+    }
+
+    if(usuarioValido){
+      console.log("Buena credencial, envio al main devuelta");
+      res.render("index");
+    }else{
+      errors.errors.push({
+        type: '',
+        value: '',
+        msg: 'Credenciales invalidas',
+        path: '',
+        location: ''
+      });
+      console.log("mala credencial, envio al login devuelta");
+      res.render("login", { errors: errors.array(), old: req.body });
     }
   },
   registro: (req, res) => {
     res.render("registro");
   },
-  login: (req, res) =>{
+  login: (req, res) => {
     res.render("login");
   }
 
