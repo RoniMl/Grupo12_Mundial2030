@@ -29,7 +29,7 @@ const validaciones = [
 router.get("/", controllers.index);
 router.get("/fanaticos", controllers.fanaticos);
 router.get("/tickets", controllers.tickets);
-router.get('/loginRegistro', controllers.loginRegistro)
+router.get("/perfil",controllers.perfil)
 
 //Guardar nuevo Usuario
 

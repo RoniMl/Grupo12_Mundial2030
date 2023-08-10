@@ -11,7 +11,11 @@ const session = require("express-session");
 
 
 const app = express();
-
+app.use(session({
+  secret: "Mundial2030",
+  resave: false,
+  saveUninitialized: false
+}));
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
@@ -23,11 +27,7 @@ app.use(methodOverride("_method"))
 app.use("/", indexRoutes);
 app.use("/anfitriones", anfitrionesRoutes);
 app.use("/cards", cardsRoutes);
-app.use(session({
-  secret: "Mundial2030",
-  resave: false,
-  saveUninitialized: false
-}));
+
 
 app.use((req,res,next)=>{
     res.send("pagina no encontrada")});

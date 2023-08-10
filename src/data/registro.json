@@ -28,5 +28,15 @@
   "nacimiento": "2020-06-23",
   "contrasena": "$2b$10$6ru6sO734mHhJScZKZ9/gun7bZNjaVsMeQ8aDS1WBjJxhpkbPxAW.",
   "imagen": "1691701971987Fondopipis.png"
+ },
+ {
+  "id": 3,
+  "nombre": "leo",
+  "apellido": "messi",
+  "correo": "leomessi@gmail.com",
+  "telefono": "1110565555",
+  "nacimiento": "1987-06-24",
+  "contrasena": "$2b$10$jkfqU2MZrY2oezyXlgpoEOTr3qavnaHOSkMwQxO/D8nl2NNKwqI46",
+  "imagen": "1691705621466messi miami.jpeg"
  }
 ]

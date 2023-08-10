@@ -95,13 +95,12 @@ const controller = {
       if ((correoInput == usuario[i].correo) && ((bcrypt.compareSync(contrasenaInput, usuario[i].contrasena)) == true)) {
         usuarioValido = usuario[i];
       }
-      console.log(usuarioValido)   
-      console.log(req.session)
 
     }
 
     if(usuarioValido){
-      res.render("index");
+      req.session.userLogged = usuarioValido  
+      res.redirect("/perfil");
     }else{
       errors.errors.push({
         type: '',
@@ -123,9 +122,15 @@ const controller = {
     res.render("login");
   }, 
   perfil: (req,res) =>{
-    console.log(req.session)
-    res.render("perfil")
-  }
+    if (req.session.userLogged){
+      res.render("perfil", {
+        usuario: req.session.userLogged
+      });
+    } else {
+      res.redirect("/login")
+    }
+    
+  },
 
 };
 module.exports = controller;
