@@ -18,5 +18,15 @@
   "nacimiento": "2023-08-02",
   "contrasena": "$2b$10$UV8MLYXFQ1lhK0/MkZDqvO30T9jK7KA79I3GTBK/SeBueyyutIRQ.",
   "imagen": "169169805892522.jpg"
+ },
+ {
+  "id": 2,
+  "nombre": "Roni",
+  "apellido": "Ayala",
+  "correo": "juan23@gmail.com",
+  "telefono": "1163633375",
+  "nacimiento": "2020-06-23",
+  "contrasena": "$2b$10$6ru6sO734mHhJScZKZ9/gun7bZNjaVsMeQ8aDS1WBjJxhpkbPxAW.",
+  "imagen": "1691701971987Fondopipis.png"
  }
 ]

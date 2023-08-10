@@ -5,6 +5,7 @@ const usuario = JSON.parse(fs.readFileSync(usuarioFilePath, "utf-8"));
 const bcrypt = require("bcrypt");
 const { validationResult } = require("express-validator");
 
+
 const controller = {
   index: (req, res) => {
     res.render(path.join(__dirname + "../../views/index.ejs"));
@@ -84,6 +85,8 @@ const controller = {
     }
   },
   validarLogin: (req, res) => {
+    
+    const errors = validationResult(req);
     let correoInput = req.body.correo;
     let contrasenaInput = req.body.contrasena;
 
@@ -92,6 +95,9 @@ const controller = {
       if ((correoInput == usuario[i].correo) && ((bcrypt.compareSync(contrasenaInput, usuario[i].contrasena)) == true)) {
         usuarioValido = usuario[i];
       }
+      console.log(usuarioValido)   
+      console.log(req.session)
+
     }
 
     if(usuarioValido){
@@ -104,14 +110,21 @@ const controller = {
         path: '',
         location: ''
       });
+
       res.render("login", { errors: errors.array(), old: req.body });
     }
+
   },
   registro: (req, res) => {
+
     res.render("registro");
   },
   login: (req, res) => {
     res.render("login");
+  }, 
+  perfil: (req,res) =>{
+    console.log(req.session)
+    res.render("perfil")
   }
 
 };
