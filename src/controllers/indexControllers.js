@@ -3,6 +3,8 @@ const fs = require("fs");
 const usuarioFilePath = path.join(__dirname, "../data/registro.json");
 const usuario = JSON.parse(fs.readFileSync(usuarioFilePath, "utf-8"));
 const bcrypt = require("bcrypt");
+const { validationResult } = require("express-validator");
+
 const controller = {
   index: (req, res) => {
     res.render(path.join(__dirname + "../../views/index.ejs"));
@@ -31,40 +33,67 @@ const controller = {
     return userFound;
   },
   crearUsuario: (req, res) => {
-    let idNuevoUsuario = 0;
-    if (!usuario.length) {
-      idNuevoUsuario = 0;
-    } else {
-      idNuevoUsuario = usuario[usuario.length - 1].id + 1;
-    }
-    let contrasena = bcrypt.hashSync(req.body.contrasena, 10);
-    let nombreImagen = req.file.filename;
-    let nuevoUsuario = {
-      id: idNuevoUsuario,
-      nombre: req.body.nombre,
-      apellido: req.body.apellido,
-      correo: req.body.correo,
-      telefono: req.body.telefono,
-      nacimiento: ConvertTo.Daytime(req.body.nacimiento),
-      contrasena: contrasena,
-      imagen: nombreImagen,
-    };
-    usuario.push(nuevousuario);
+    const errors = validationResult(req);
 
-    fs.writeFileSync(usuarioFilePath, JSON.stringify(usuario, null, " "));
-    res.redirect("/");
+    if (!req.body.aceptarTerminos) {
+      errors.errors.push({
+        type: '',
+        value: '',
+        msg: 'Debes aceptar los terminos y condiciones',
+        path: '',
+        location: ''
+      });
+    }
+
+    if (!req.file) {
+      errors.errors.push({
+        type: '',
+        value: '',
+        msg: 'Debes subir una imagen de perfil',
+        path: '',
+        location: ''
+      });
+    }
+
+    if (!errors.isEmpty()) {
+      res.render("registro", { errors: errors.array(), old: req.body });
+    } else {
+      let idNuevoUsuario = 0;
+      if (!usuario.length) {
+        idNuevoUsuario = 0;
+      } else {
+        idNuevoUsuario = usuario[usuario.length - 1].id + 1;
+      }
+      console.log(req.body);
+      let contrasena = bcrypt.hashSync(req.body.contrasena, 10);
+      let nombreImagen = req.file.filename;
+      let nuevoUsuario = {
+        id: idNuevoUsuario,
+        nombre: req.body.nombre,
+        apellido: req.body.apellido,
+        correo: req.body.correo,
+        telefono: req.body.telefono,
+        nacimiento: req.body.nacimiento,
+        contrasena: contrasena,
+        imagen: nombreImagen,
+      };
+      usuario.push(nuevoUsuario);
+
+      fs.writeFileSync(usuarioFilePath, JSON.stringify(usuario, null, " "));
+      res.redirect("/");
+    }
   },
   validarLogin: (req, res) => {
-    let userToLogin = User.buscarPorCampo("correo", req.body.correo)
-    if (userToLogin){
-      req.session.userLogged = userToLogin;
-      return res.trender("/")
+    let correoInput = req.body.correo;
+    let contrasenaInput = req.body.contrasena;
+    for (let i = 0; i < usuario.length; i++) {
+      if ((correoInput == usuario.correo) && ((bcrypt.compareSync(constrasenaInput, usuario.contrasena)) == true )) {
+        res.render("/")
+      } else {
+        res.render("El usuario o la contraseña no son correctos")
+      }
+      
     }
   },
-  profile: (req , res) => {
-    return res .render("userProfile",{
-      user: req.session.userLogged
-    });
-  }
 };
 module.exports = controller;
