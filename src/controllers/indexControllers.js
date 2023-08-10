@@ -24,12 +24,12 @@ const controller = {
     let allUsers = this.findAll();
     let userFound = allUsers.find((u) => u.id == id);
     return userFound;
-  },
-  buscarPorCampo: function (field, text) {
+  }*/
+  buscarPorCampo: function (campo, texto) {
     let allUsers = this.findAll();
-    let userFound = allUsers.find((u) => u[field] == text);
+    let userFound = allUsers.find((u) => u[campo] == texto);
     return userFound;
-  },*/
+  },
   crearUsuario: (req, res) => {
     let idNuevoUsuario = 0;
     if (!usuario.length) {
@@ -55,16 +55,16 @@ const controller = {
     res.redirect("/");
   },
   validarLogin: (req, res) => {
-    let correoInput = req.body.correo;
-    let contrasenaInput = req.body.contrasena;
-    for (let i = 0; i < usuario.length; i++) {
-      if ((correoInput == usuario.correo) && ((bcrypt.compareSync(constrasenaInput, usuario.contrasena)) == true )) {
-        res.render("/")
-      } else {
-        res.render("El usuario o la contraseña no son correctos")
-      }
-      
+    let userToLogin = User.buscarPorCampo("correo", req.body.correo)
+    if (userToLogin){
+      req.session.userLogged = userToLogin;
+      return res.trender("/")
     }
   },
+  profile: (req , res) => {
+    return res .render("userProfile",{
+      user: req.session.userLogged
+    });
+  }
 };
 module.exports = controller;
