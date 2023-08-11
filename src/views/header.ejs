@@ -11,11 +11,14 @@
     <ul class="menu-header">
       <li><a href="/">Inicio</a></li>
       <li><a href="/tickets">Tickets</a></li>
+      <% if(usuarioLogeado){%>
+        <li><a href="/perfil">Mi Perfil</a></li>
+        <li><a href="/mis-entradas">Mis entradas</a></li>
+        <li><a href="/cerrar-sesion">Cerrar Sesión</a></li>
+        <% } else { %>
       <li><label class="palabrasLoginRegistro" for="login">Login</label></li>
-      <li>
-        <label class="palabrasLoginRegistro" for="registro">Registro</label></a>
-      </li>
-      <li><a href="/mis-entradas">Mis entradas</a></li>
+      <li><label class="palabrasLoginRegistro" for="registro">Registro</label></a></li>
+      <% } %>
     </ul>
   </div>
   <div class="header-abajo col-12">

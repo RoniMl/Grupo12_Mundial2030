@@ -122,6 +122,10 @@ const controller = {
       res.redirect("/login");
     }
   },
+  cerrarSesion: (req, res) => {
+    req.session.destroy()
+    res.redirect('/');
+  }
 };
 module.exports = controller;
 

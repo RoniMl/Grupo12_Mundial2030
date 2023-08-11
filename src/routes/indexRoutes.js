@@ -37,7 +37,8 @@ router.get("/equipos",controllers.equipos);
 router.get("/registro", controllers.registro);
 router.post("/registro", uploadFile.single("imagen"), validaciones,controllers.crearUsuario);
 router.get("/login", controllers.login);
-router.post("/login", controllers.validarLogin)
+router.post("/login", controllers.validarLogin);
+router.get("/cerrar-sesion", controllers.cerrarSesion);
 
 
 module.exports = router;
