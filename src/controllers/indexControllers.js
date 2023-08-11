@@ -5,7 +5,6 @@ const usuario = JSON.parse(fs.readFileSync(usuarioFilePath, "utf-8"));
 const bcrypt = require("bcrypt");
 const { validationResult } = require("express-validator");
 
-
 const controller = {
   index: (req, res) => {
     res.render(path.join(__dirname + "../../views/index.ejs"));
@@ -19,15 +18,9 @@ const controller = {
   tickets: (req, res) => {
     res.render(path.join(__dirname + "../../views/tickets.ejs"));
   },
-  /*fileName: "./src/data/registro.json",
-  getData: function () {
-    return JSON.parse(fs.readFileSync(this.fileName, "utf-8"));
+  equipos: (req, res) => {
+    res.render(path.join(__dirname + "../../views/equipos.ejs"));
   },
-  buscarPorPK: function (id) {
-    let allUsers = this.findAll();
-    let userFound = allUsers.find((u) => u.id == id);
-    return userFound;
-  }*/
   buscarPorCampo: function (campo, texto) {
     let allUsers = this.findAll();
     let userFound = allUsers.find((u) => u[campo] == texto);
@@ -38,21 +31,21 @@ const controller = {
 
     if (!req.body.aceptarTerminos) {
       errors.errors.push({
-        type: '',
-        value: '',
-        msg: 'Debes aceptar los terminos y condiciones',
-        path: '',
-        location: ''
+        type: "",
+        value: "",
+        msg: "Debes aceptar los terminos y condiciones",
+        path: "",
+        location: "",
       });
     }
 
     if (!req.file) {
       errors.errors.push({
-        type: '',
-        value: '',
-        msg: 'Debes subir una imagen de perfil',
-        path: '',
-        location: ''
+        type: "",
+        value: "",
+        msg: "Debes subir una imagen de perfil",
+        path: "",
+        location: "",
       });
     }
 
@@ -85,52 +78,59 @@ const controller = {
     }
   },
   validarLogin: (req, res) => {
-    
     const errors = validationResult(req);
     let correoInput = req.body.correo;
     let contrasenaInput = req.body.contrasena;
 
     let usuarioValido = null;
     for (let i = 0; i < usuario.length; i++) {
-      if ((correoInput == usuario[i].correo) && ((bcrypt.compareSync(contrasenaInput, usuario[i].contrasena)) == true)) {
+      if (
+        correoInput == usuario[i].correo &&
+        bcrypt.compareSync(contrasenaInput, usuario[i].contrasena) == true
+      ) {
         usuarioValido = usuario[i];
       }
-
     }
 
-    if(usuarioValido){
-      req.session.userLogged = usuarioValido  
+    if (usuarioValido) {
+      req.session.userLogged = usuarioValido;
       res.redirect("/perfil");
-    }else{
+    } else {
       errors.errors.push({
-        type: '',
-        value: '',
-        msg: 'Credenciales invalidas',
-        path: '',
-        location: ''
+        type: "",
+        value: "",
+        msg: "Credenciales invalidas",
+        path: "",
+        location: "",
       });
 
       res.render("login", { errors: errors.array(), old: req.body });
     }
-
   },
   registro: (req, res) => {
-
     res.render("registro");
   },
   login: (req, res) => {
     res.render("login");
-  }, 
-  perfil: (req,res) =>{
-    if (req.session.userLogged){
+  },
+  perfil: (req, res) => {
+    if (req.session.userLogged) {
       res.render("perfil", {
-        usuario: req.session.userLogged
+        usuario: req.session.userLogged,
       });
     } else {
-      res.redirect("/login")
+      res.redirect("/login");
     }
-    
   },
-
 };
 module.exports = controller;
+
+/*fileName: "./src/data/registro.json",
+getData: function () {
+  return JSON.parse(fs.readFileSync(this.fileName, "utf-8"));
+},
+buscarPorPK: function (id) {
+  let allUsers = this.findAll();
+  let userFound = allUsers.find((u) => u.id == id);
+  return userFound;
+}*/
