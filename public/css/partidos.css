@@ -1,0 +1,46 @@
+body {
+    background-color: #f1f5f8;
+    color: #333;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  .list-group-item {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  .list-group-item:hover {
+    background-color: #e4eaf2;
+  }
+
+  .date {
+    color: #007bff;
+    font-weight: bold;
+  }
+
+  .venue {
+    color: #17a2b8;
+  }
+
+  .btn-link {
+    color: #007bff;
+  }
+
+  .btn-link:hover {
+    text-decoration: none;
+    color: #326295;
+  }
+
+.fecha-partidos{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #326295;
+    text-align: center;
+}
+.local-visita{
+    text-align: center;
+    align-items: center;
+    
+
+}

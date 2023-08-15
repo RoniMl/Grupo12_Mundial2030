@@ -21,6 +21,12 @@ const controller = {
   equipos: (req, res) => {
     res.render(path.join(__dirname + "../../views/equipos.ejs"));
   },
+  estadios: (req, res) => {
+    res.render(path.join(__dirname + "../../views/estadios.ejs"));
+  },
+  partidos: (req, res) => {
+    res.render(path.join(__dirname + "../../views/partidos.ejs"));
+  },
   buscarPorCampo: function (campo, texto) {
     let allUsers = this.findAll();
     let userFound = allUsers.find((u) => u[campo] == texto);
