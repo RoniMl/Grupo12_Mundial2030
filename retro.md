@@ -19,6 +19,10 @@
 
 - Lo hicimos rapido, lo entregamos rapido
 
+/Sprint 4/
+
+- Buen ritmo de trabajo y dedicacion
+
 
 ## Cosas para mejorar:
 
@@ -38,6 +42,10 @@
 
 - mejorar los nombres para que no sea una enredadera 
 
+/Sprint 4/
+
+- leer y contestar al grupo de wpp
+
 ## Cosas que cambiar:
 
  /Sprint 1/
@@ -55,6 +63,8 @@
 
 - estetica del sitio o una armonia general 
 
+/Sprint 4/ 
+- Participacion en todos los aspectos
 
 
 
