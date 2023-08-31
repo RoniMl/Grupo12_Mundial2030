@@ -24,6 +24,9 @@ const controller = {
   estadios: (req, res) => {
     res.render(path.join(__dirname + "../../views/estadios.ejs"));
   },
+  jugadores: (req,res) => {
+    res.render(path.join(__dirname + "../../views/jugadores.ejs"));
+  },
   partidos: (req, res) => {
     res.render(path.join(__dirname + "../../views/partidos.ejs"));
   },
