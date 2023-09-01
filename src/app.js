@@ -8,7 +8,7 @@ const indexRoutes = require("./routes/indexRoutes");
 const anfitrionesRoutes = require("./routes/anfitrionesRoutes");
 const cardsRoutes = require("./routes/cardsRoutes");
 
-/*const connection = mysql.createConnection({
+const connection = mysql.createConnection({
   host: "mysql-roni.alwaysdata.net",
   user: "roni_roni11",
   password: "grupo12mundial2030",
@@ -18,7 +18,7 @@ connection.connect((err) => {
   if (err) throw err;
   console.log("Conectado!");
 });
-*/
+
 const app = express();
 app.use(
   session({
