@@ -29,12 +29,12 @@ function mundialData(sequelize, DataTypes) {
       foreignKey: "localFK",
     });
     pais.hasMany(modelos.visitante, {
-        as: "partido",
-        foreignKey: "visitanteFK",
-      });
+      as: "partido",
+      foreignKey: "visitanteFK",
+    });
   };
 
-  return pais; 
+  return pais;
 }
 
 module.exports = mundialData;

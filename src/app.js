@@ -14,11 +14,12 @@ const connection = mysql.createConnection({
   password: "grupo12mundial2030",
   database: "roni_grupo12_mundial2030",
 });
+
 connection.connect((err) => {
   if (err) throw err;
   console.log("Conectado!");
+  console.log(err);
 });
-
 const app = express();
 app.use(
   session({
