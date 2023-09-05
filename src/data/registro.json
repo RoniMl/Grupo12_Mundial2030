@@ -28,5 +28,15 @@
   "nacimiento": "1987-06-24",
   "contrasena": "$2b$10$jkfqU2MZrY2oezyXlgpoEOTr3qavnaHOSkMwQxO/D8nl2NNKwqI46",
   "imagen": "1691705621466messi miami.jpeg"
+ },
+ {
+  "id": 3,
+  "nombre": "Novak",
+  "apellido": "Djokovic",
+  "correo": "nole@gmail.com",
+  "telefono": "1112345678",
+  "nacimiento": "1997-10-21",
+  "contrasena": "$2b$10$RxCIEbIhE7lIpn7vi.PES.WT8waWHDHn78qnS5HtEEDoJJ/kToqKu",
+  "imagen": "1693936800788Captura de pantalla 2023-09-03 140039.jpg"
  }
 ]

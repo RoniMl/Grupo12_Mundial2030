@@ -3,9 +3,13 @@ function mundialData(sequelize, DataTypes) {
 
   cols = {
     id: { type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true },
-    nombre: { type: Datatypes.STRING(50) },
-    email: { type: Datatypes.STRING(50) },
-    clave: { type: Datatypes.STRING(50) },
+    nombre: { type: Datatypes.STRING(255) },
+    correo: { type: Datatypes.STRING(255) },
+    clave: { type: Datatypes.STRING(255) },
+    telefono: { type: Datatypes.STRING(255) },
+    apellido: { type: Datatypes.STRING(255) },
+    imagen: { type: Datatypes.STRING(255) },
+    nacimiento: { type: Datatypes.DATE() },
   };
 
   config = { camelCase: false, timestamps: false };

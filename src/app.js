@@ -1,14 +1,14 @@
 const express = require("express");
 const methodOverride = require("method-override");
-const mysql = require("mysql2");
+//const mysql = require("mysql2");
 const session = require("express-session");
 const path = require("path");
-const sequelize = require("sequelize");
+//const sequelize = require("sequelize");
 const indexRoutes = require("./routes/indexRoutes");
 const anfitrionesRoutes = require("./routes/anfitrionesRoutes");
 const cardsRoutes = require("./routes/cardsRoutes");
 
-const connection = mysql.createConnection({
+/*const connection = mysql.createConnection({
   host: "mysql-roni.alwaysdata.net",
   user: "roni_roni11",
   password: "grupo12mundial2030",
@@ -20,6 +20,8 @@ connection.connect((err) => {
   console.log("Conectado!");
   console.log(err);
 });
+*/
+
 const app = express();
 app.use(
   session({
@@ -53,4 +55,4 @@ app.listen(3002, function () {
   console.log("Servidor corriendo");
 });
 
-module.exports = sequelize;
+//module.exports = sequelize;
