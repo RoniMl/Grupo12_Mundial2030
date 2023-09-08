@@ -2,9 +2,9 @@ function mundialData(sequelize, DataTypes) {
     alias = "arte";
   
     cols = {
-      id: { type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true },
-      nombre: { type: Datatypes.STRING(50) },
-      imagen: { type: Datatypes.STRING(50) },
+      id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+      nombre: { type: DataTypes.STRING(50) },
+      imagen: { type: DataTypes.STRING(50) },
       usuarioFK: { type: DataTypes.INTEGER },
     };
   

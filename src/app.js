@@ -3,10 +3,12 @@ const methodOverride = require("method-override");
 //const mysql = require("mysql2");
 const session = require("express-session");
 const path = require("path");
-//const sequelize = require("sequelize");
+//const Sequelize = require('sequelize');
 const indexRoutes = require("./routes/indexRoutes");
 const anfitrionesRoutes = require("./routes/anfitrionesRoutes");
 const cardsRoutes = require("./routes/cardsRoutes");
+
+
 
 /*const connection = mysql.createConnection({
   host: "mysql-roni.alwaysdata.net",
