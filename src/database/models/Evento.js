@@ -2,10 +2,10 @@ function mundialData(sequelize, DataTypes) {
   alias = "evento";
 
   cols = {
-    id: { type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true },
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     fecha: { type: DataTypes.DATE },
-    direccion: { type: Datatypes.STRING(50) },
-    imagen: { type: Datatypes.STRING(50) },
+    direccion: { type: DataTypes.STRING(50) },
+    imagen: { type: DataTypes.STRING(50) },
     paisFK: { type: DataTypes.INTEGER },
   };
 

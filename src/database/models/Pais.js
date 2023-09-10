@@ -2,8 +2,8 @@ function mundialData(sequelize, DataTypes) {
   alias = "pais";
 
   cols = {
-    id: { type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true },
-    nombre: { type: Datatypes.STRING(50) },
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    nombre: { type: DataTypes.STRING(50) },
     imagen: { type: DataTypes.STRING(50) },
   };
 
@@ -11,27 +11,27 @@ function mundialData(sequelize, DataTypes) {
 
   const pais = sequelize.define(alias, cols, config);
 
-  pais.associate = function (modelos) {
-    pais.hasMany(modelos.arbitro, {
+  pais.associate = function (models) {
+    pais.hasMany(models.arbitro, {
       as: "arbitro",
       foreignKey: "paisFK",
     });
-    pais.hasMany(modelos.estadio, {
+    pais.hasMany(models.Estadio, {
       as: "estadio",
       foreignKey: "paisFK",
     });
-    pais.hasMany(modelos.evento, {
+    pais.hasMany(models.evento, {
       as: "evento",
       foreignKey: "paisFK",
     });
-    pais.hasMany(modelos.local, {
+    pais.hasMany(models.partido, {
       as: "partido",
       foreignKey: "localFK",
     });
-    pais.hasMany(modelos.visitante, {
+    /*pais.hasMany(models.partido, {
       as: "partido",
       foreignKey: "visitanteFK",
-    });
+    });*/
   };
 
   return pais;

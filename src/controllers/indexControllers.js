@@ -4,6 +4,7 @@ const usuarioFilePath = path.join(__dirname, "../data/registro.json");
 const usuario = JSON.parse(fs.readFileSync(usuarioFilePath, "utf-8"));
 const bcrypt = require("bcrypt");
 const { validationResult } = require("express-validator");
+const db = require('../database/models')
 
 const controller = {
   index: (req, res) => {
@@ -15,8 +16,11 @@ const controller = {
   loginRegistro: (req, res) => {
     res.render(path.join(__dirname + "../..views/loginRegistro.ejs"));
   },
-  tickets: (req, res) => {
-    res.render(path.join(__dirname + "../../views/tickets.ejs"));
+  tickets: async (req, res) => {
+    let prueba = await db.Estadio.findAll();
+    //console.log(prueba);
+    res.send(prueba);
+    //res.render(path.join(__dirname + "../../views/tickets.ejs"));
   },
   equipos: (req, res) => {
     res.render(path.join(__dirname + "../../views/equipos.ejs"));

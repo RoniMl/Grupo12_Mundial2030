@@ -2,8 +2,8 @@ function mundialData(sequelize, DataTypes) {
   alias = "arbitro";
 
   cols = {
-    id: { type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true },
-    nombre: { type: Datatypes.STRING(50) },
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    nombre: { type: DataTypes.STRING(50) },
     paisFK: { type: DataTypes.INTEGER },
   };
 

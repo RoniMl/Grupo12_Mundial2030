@@ -4,11 +4,11 @@ function mundialData(sequelize, DataTypes) {
   alias = "partido";
 
   cols = {
-    id: { type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true },
-    fecha: { type: Datatypes.DATE },
-    numero_partido: { type: Datatypes.INTEGER },
-    anotacion_local: { type: Datatypes.INTEGER },
-    anotacion_visitante: { type: Datatypes.INTEGER },
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    fecha: { type: DataTypes.DATE },
+    numero_partido: { type: DataTypes.INTEGER },
+    anotacion_local: { type: DataTypes.INTEGER },
+    anotacion_visitante: { type: DataTypes.INTEGER },
     estadioFK: { type: DataTypes.INTEGER },
     faseFK: { type: DataTypes.INTEGER },
     localFK: { type: DataTypes.INTEGER },
@@ -25,7 +25,7 @@ function mundialData(sequelize, DataTypes) {
       as: "partido",
       foreignKey: "partidoFK",
     });
-    partido.belongsTo(modelos.fase, {
+    partido.belongsTo(modelos.Fase, {
       as: "fase",
       foreignKey: "faseFK",
     });
