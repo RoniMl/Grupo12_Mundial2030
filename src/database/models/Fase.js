@@ -3,7 +3,7 @@ function mundialData(sequelize, DataTypes) {
 
   cols = {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    nombre: { type: DataTypes.STRING(50) },
+    nombre: { type: DataTypes.STRING(255) },
   };
 
   config = { camelCase: false, timestamps: false };
@@ -11,7 +11,7 @@ function mundialData(sequelize, DataTypes) {
   const Fase = sequelize.define(alias, cols, config);
 
   Fase.associate = function (modelos) {
-    Fase.hasMany(modelos.partido, {
+    Fase.hasMany(modelos.Partido, {
       as: "partido",
       foreignKey: "FaseFK",
     });

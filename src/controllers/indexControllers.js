@@ -17,7 +17,7 @@ const controller = {
     res.render(path.join(__dirname + "../..views/loginRegistro.ejs"));
   },
   tickets: async (req, res) => {
-    let prueba = await db.Estadio.findAll();
+    let prueba = await db.Usuario.findAll({include: ["entrada", "arte"]});
     //console.log(prueba);
     res.send(prueba);
     //res.render(path.join(__dirname + "../../views/tickets.ejs"));

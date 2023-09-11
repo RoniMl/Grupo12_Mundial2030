@@ -1,30 +1,30 @@
 function mundialData(sequelize, DataTypes) {
-  alias = "entrada";
+  alias = "Entrada";
 
   cols = {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    codigo: { type: DataTypes.STRING(50) },
+    codigo: { type: DataTypes.STRING(255) },
     numero_asiento: { type: DataTypes.INTEGER },
     partidoFK: { type: DataTypes.INTEGER },
-    usuarioFK: { type: DataTypes.INTEGER },
+    usuarioFK: { type: DataTypes.INTEGER }
   };
 
   config = { camelCase: false, timestamps: false };
 
-  const entrada = sequelize.define(alias, cols, config);
+  const Entrada = sequelize.define(alias, cols, config);
 
-  entrada.associate = function (modelos) {
-    entrada.belongsTo(modelos.partido, {
+  Entrada.associate = function (modelos) {
+    Entrada.belongsTo(modelos.Partido, {
       as: "partido",
       foreignKey: "partidoFK",
     });
-    entrada.belongsTo(modelos.usuario, {
+    Entrada.belongsTo(modelos.Usuario, {
       as: "usuario",
       foreignKey: "usuarioFK",
     });
   };
 
-  return entrada;
+  return Entrada;
 }
 
 module.exports = mundialData;

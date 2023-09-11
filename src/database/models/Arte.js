@@ -1,25 +1,25 @@
 function mundialData(sequelize, DataTypes) {
-    alias = "arte";
+    alias = "Arte";
   
     cols = {
       id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-      nombre: { type: DataTypes.STRING(50) },
-      imagen: { type: DataTypes.STRING(50) },
+      nombre: { type: DataTypes.STRING(255) },
+      imagen: { type: DataTypes.STRING(255) },
       usuarioFK: { type: DataTypes.INTEGER },
     };
   
     config = { camelCase: false, timestamps: false };
   
-    const arte = sequelize.define(alias, cols, config);
+    const Arte = sequelize.define(alias, cols, config);
   
-    arte.associate = function (modelos) {
-      arte.belongsTo(modelos.usuario, {
+    Arte.associate = function (modelos) {
+      Arte.belongsTo(modelos.Usuario, {
         as: "usuario",
         foreignKey: "usuarioFK",
       });
     };
   
-    return arte;
+    return Arte;
   }
   
   module.exports = mundialData

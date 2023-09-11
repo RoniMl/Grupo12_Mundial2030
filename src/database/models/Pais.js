@@ -1,40 +1,45 @@
 function mundialData(sequelize, DataTypes) {
-  alias = "pais";
+  alias = "Pais";
 
   cols = {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    nombre: { type: DataTypes.STRING(50) },
-    imagen: { type: DataTypes.STRING(50) },
+    nombre: { type: DataTypes.STRING(255) },
+    imagen: { type: DataTypes.STRING(255) },
+    participaciones: { type: DataTypes.INTEGER }
   };
 
-  config = { camelCase: false, timestamps: false };
+  config = { camelCase: false, timestamps: false, freezeTableName: true, tableName: 'Paises'};
 
-  const pais = sequelize.define(alias, cols, config);
+  const Pais = sequelize.define(alias, cols, config);
 
-  pais.associate = function (models) {
-    pais.hasMany(models.arbitro, {
+  Pais.associate = function (models) {
+    Pais.hasMany(models.Arbitro, {
       as: "arbitro",
       foreignKey: "paisFK",
-    });
-    pais.hasMany(models.Estadio, {
+    })
+    Pais.hasMany(models.Estadio, {
       as: "estadio",
       foreignKey: "paisFK",
     });
-    pais.hasMany(models.evento, {
+    Pais.hasMany(models.Evento, {
       as: "evento",
       foreignKey: "paisFK",
     });
-    pais.hasMany(models.partido, {
-      as: "partido",
+    Pais.hasMany(models.Jugador, {
+      as: "jugador",
+      foreignKey: "paisFK",
+    });
+    Pais.hasMany(models.Partido, {
+      as: "partidoLocal",
       foreignKey: "localFK",
     });
-    /*pais.hasMany(models.partido, {
-      as: "partido",
+    Pais.hasMany(models.Partido, {
+      as: "partidoVisitante",
       foreignKey: "visitanteFK",
-    });*/
+    });
   };
 
-  return pais;
+  return Pais;
 }
 
 module.exports = mundialData;

@@ -1,26 +1,26 @@
 function mundialData(sequelize, DataTypes) {
-  alias = "evento";
+  alias = "Evento";
 
   cols = {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    nombre: { type: DataTypes.STRING(255) },
     fecha: { type: DataTypes.DATE },
-    direccion: { type: DataTypes.STRING(50) },
-    imagen: { type: DataTypes.STRING(50) },
+    direccion: { type: DataTypes.STRING(255) },
     paisFK: { type: DataTypes.INTEGER },
   };
 
   config = { camelCase: false, timestamps: false };
 
-  const evento = sequelize.define(alias, cols, config);
+  const Evento = sequelize.define(alias, cols, config);
 
-  evento.associate = function (modelos) {
-    evento.belongsTo(modelos.pais, {
+  Evento.associate = function (modelos) {
+    Evento.belongsTo(modelos.Pais, {
       as: "pais",
       foreignKey: "paisFK",
     });
   };
 
-  return evento;
+  return Evento;
 }
 
 module.exports = mundialData;

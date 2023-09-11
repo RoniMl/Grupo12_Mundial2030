@@ -1,32 +1,32 @@
 function mundialData(sequelize, DataTypes) {
-  alias = "usuario";
+  alias = "Usuario";
 
   cols = {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    nacimiento: { type: DataTypes.DATE },
+    imagen: { type: DataTypes.STRING(255) },
     nombre: { type: DataTypes.STRING(255) },
     correo: { type: DataTypes.STRING(255) },
-    clave: { type: DataTypes.STRING(255) },
     telefono: { type: DataTypes.STRING(255) },
+    clave: { type: DataTypes.STRING(255) },
     apellido: { type: DataTypes.STRING(255) },
-    imagen: { type: DataTypes.STRING(255) },
-    nacimiento: { type: DataTypes.DATE() },
   };
 
   config = { camelCase: false, timestamps: false };
 
-  const usuario = sequelize.define(alias, cols, config);
+  const Usuario = sequelize.define(alias, cols, config);
 
-  usuario.associate = function (modelos) {
-    usuario.hasMany(modelos.entrada, {
+  Usuario.associate = function (modelos) {
+    Usuario.hasMany(modelos.Entrada, {
       as: "entrada",
-      foreignKey: "paisFK",
+      foreignKey: "UsuarioFK",
     });
-    usuario.hasMany(modelos.arte, {
+    Usuario.hasMany(modelos.Arte, {
       as: "arte",
-      foreignKey: "paisFK",
+      foreignKey: "UsuarioFK",
     });
   };
-  return usuario;
+  return Usuario;
 }
 
 module.exports = mundialData;

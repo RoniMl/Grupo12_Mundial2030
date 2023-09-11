@@ -1,49 +1,49 @@
 const { INTEGER } = require("sequelize");
 
 function mundialData(sequelize, DataTypes) {
-  alias = "partido";
+  alias = "Partido";
 
   cols = {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     fecha: { type: DataTypes.DATE },
     numero_partido: { type: DataTypes.INTEGER },
-    anotacion_local: { type: DataTypes.INTEGER },
-    anotacion_visitante: { type: DataTypes.INTEGER },
     estadioFK: { type: DataTypes.INTEGER },
     faseFK: { type: DataTypes.INTEGER },
     localFK: { type: DataTypes.INTEGER },
     visitanteFK: { type: DataTypes.INTEGER },
     arbitroFK: { type: DataTypes.INTEGER },
+    anotacion_local: { type: DataTypes.INTEGER },
+    anotacion_visitante: { type: DataTypes.INTEGER },
   };
 
   config = { camelCase: false, timestamps: false };
 
-  const partido = sequelize.define(alias, cols, config);
+  const Partido = sequelize.define(alias, cols, config);
 
-  partido.associate = function (modelos) {
-    partido.hasMany(modelos.partido, {
-      as: "partido",
+  Partido.associate = function (modelos) {
+    Partido.hasMany(modelos.Entrada, {
+      as: "entrada",
       foreignKey: "partidoFK",
     });
-    partido.belongsTo(modelos.Fase, {
+    Partido.belongsTo(modelos.Fase, {
       as: "fase",
       foreignKey: "faseFK",
     });
-    partido.belongsTo(modelos.pais, {
-      as: "local",
+    Partido.belongsTo(modelos.Pais, {
+      as: "paisLocal",
       foreignKey: "localFK",
     });
-    partido.belongsTo(modelos.pais, {
-      as: "visitante",
+    Partido.belongsTo(modelos.Pais, {
+      as: "paisVisitante",
       foreignKey: "visitanteFK",
     });
-    partido.belongsTo(modelos.arbitro, {
+    Partido.belongsTo(modelos.Arbitro, {
       as: "arbitro",
       foreignKey: "arbitroFK",
     });
   };
 
-  return partido;
+  return Partido;
 }
 
 module.exports = mundialData;
