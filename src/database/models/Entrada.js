@@ -6,7 +6,7 @@ function mundialData(sequelize, DataTypes) {
     codigo: { type: DataTypes.STRING(255) },
     numero_asiento: { type: DataTypes.INTEGER },
     partidoFK: { type: DataTypes.INTEGER },
-    usuarioFK: { type: DataTypes.INTEGER }
+    usuarioFK: { type: DataTypes.INTEGER },
   };
 
   config = { camelCase: false, timestamps: false };
@@ -24,7 +24,7 @@ function mundialData(sequelize, DataTypes) {
     });
   };
 
-  return Entraada; 
+  return Entrada;
 }
 
 module.exports = mundialData;
