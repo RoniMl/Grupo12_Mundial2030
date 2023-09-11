@@ -30,10 +30,6 @@ router.get("/", controllers.index);
 router.get("/fanaticos", controllers.fanaticos);
 router.get("/tickets", controllers.tickets);
 router.get("/perfil",controllers.perfil);
-router.get("/equipos",controllers.equipos);
-router.get("/estadios",controllers.estadios);
-router.get("/partidos",controllers.partidos);
-router.get("/jugadores",controllers.jugadores);
 
 //Guardar nuevo Usuario
 

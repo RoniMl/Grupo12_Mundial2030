@@ -24,7 +24,7 @@ function mundialData(sequelize, DataTypes) {
     });
   };
 
-  return Entrada;
+  return Entraada; 
 }
 
 module.exports = mundialData;
