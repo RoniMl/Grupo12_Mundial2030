@@ -7,10 +7,9 @@ const barsControllers = {
     res.render(path.join(__dirname + "../../views/equipos.ejs"));
   },
   estadios: (req, res) => {
-    db.Estadio.findAll().then(function (estadio) {
-      res.render("../../views/estadios.ejs", {
-        include: [{ association: "pais" }],
-      });
+    db.Estadio.findAll({include: ["pais" ]}).then(function (estadio) {
+      res.render("estadios");
+      //res.render("../../views/estadios.ejs", {estadio: estadio});
     });
   },
 
