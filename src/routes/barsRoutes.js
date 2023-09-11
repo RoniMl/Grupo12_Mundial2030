@@ -1,4 +1,4 @@
-const controllers = require("./../controllers/indexControllers")
+const barscontrollers = require("./../controllers/barsControllers")
 const express = require("express");
 const router = express.Router();
 const multer = require("multer");
@@ -6,9 +6,9 @@ const path = require("path");
 const {check} = require("express-validator");
 
 
-router.get("/equipos",controllers.equipos);
-router.get("/estadios",controllers.estadios);
-router.get("/partidos",controllers.partidos);
-router.get("/jugadores",controllers.jugadores);
+router.get("/equipos",barscontrollers.equipos);
+router.get("/estadios",barscontrollers.estadios);
+router.get("/partidos",barscontrollers.partidos);
+router.get("/jugadores",barscontrollers.jugadores);
 
 module.exports = router;

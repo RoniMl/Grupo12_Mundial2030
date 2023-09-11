@@ -4,7 +4,7 @@ const usuarioFilePath = path.join(__dirname, "../data/registro.json");
 const usuario = JSON.parse(fs.readFileSync(usuarioFilePath, "utf-8"));
 const bcrypt = require("bcrypt");
 const { validationResult } = require("express-validator");
-const db = require('../database/models')
+const db = require("../database/models");
 
 const controller = {
   index: (req, res) => {
@@ -17,22 +17,10 @@ const controller = {
     res.render(path.join(__dirname + "../..views/loginRegistro.ejs"));
   },
   tickets: async (req, res) => {
-    let prueba = await db.Usuario.findAll({include: ["entrada", "arte"]});
+    let prueba = await db.Usuario.findAll({ include: ["entrada", "arte"] });
     //console.log(prueba);
     res.send(prueba);
     //res.render(path.join(__dirname + "../../views/tickets.ejs"));
-  },
-  equipos: (req, res) => {
-    res.render(path.join(__dirname + "../../views/equipos.ejs"));
-  },
-  estadios: (req, res) => {
-    res.render(path.join(__dirname + "../../views/estadios.ejs"));
-  },
-  jugadores: (req,res) => {
-    res.render(path.join(__dirname + "../../views/jugadores.ejs"));
-  },
-  partidos: (req, res) => {
-    res.render(path.join(__dirname + "../../views/partidos.ejs"));
   },
   buscarPorCampo: function (campo, texto) {
     let allUsers = this.findAll();
@@ -136,9 +124,9 @@ const controller = {
     }
   },
   cerrarSesion: (req, res) => {
-    req.session.destroy()
-    res.redirect('/');
-  }
+    req.session.destroy();
+    res.redirect("/");
+  },
 };
 module.exports = controller;
 

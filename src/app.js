@@ -7,6 +7,7 @@ const path = require("path");
 const indexRoutes = require("./routes/indexRoutes");
 const anfitrionesRoutes = require("./routes/anfitrionesRoutes");
 const cardsRoutes = require("./routes/cardsRoutes");
+const barsRoutes = require("./routes/barsRoutes");
 
 
 
@@ -48,6 +49,7 @@ app.use(methodOverride("_method"));
 app.use("/", indexRoutes);
 app.use("/anfitriones", anfitrionesRoutes);
 app.use("/cards", cardsRoutes);
+app.use("/bars", barsRoutes)
 
 app.use((req, res, next) => {
   res.send("pagina no encontrada");
