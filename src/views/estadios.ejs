@@ -6,12 +6,12 @@
   <body>
     <header><%- include("header") %></header>
     <main>
-      <% for (let i = 0: i< estadio.length; i++) { %>
+      <% for (let i = 0; i< estadios.length; i++) { %>
       <div class="equipo">
         <div class="info-equipo">
-          <h2><%= estadio[i].nombre%></h2>
-          <p><%= estadio[i].capacidad%>:</p>
-          <p><%= estadio[i].direccion%></p>
+          <h2><%= estadios[i].nombre%></h2>
+          <p>Capacidad: <%= estadios[i].capacidad%></p>
+          <p><%= estadios[i].direccion%></p>
         </div>
       </div>
       <% } %>
