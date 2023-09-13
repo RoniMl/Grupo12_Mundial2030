@@ -8,7 +8,7 @@ const barsControllers = {
   },
   estadios: (req, res) => {
     db.Estadio.findAll({include: ["pais" ]}).then(function (estadio) {
-      res.render("estadios");
+      res.send(estadio);
       //res.render("../../views/estadios.ejs", {estadio: estadio});
     });
   },

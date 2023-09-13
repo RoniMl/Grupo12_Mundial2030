@@ -2,32 +2,55 @@ const path = require("path");
 const fs = require("fs");
 const arteFilePath = path.join(__dirname, "../data/arte.json");
 const arte = JSON.parse(fs.readFileSync(arteFilePath, "utf-8"));
+const db = require("../database/models");
 
 const cardsControllers = {
   //Subir
+  
   subirArt: (req, res) => {
-    res.render("compartir");
+    if (req.session.userLogged) {
+      res.render("compartir");
+    }else {
+      res.redirect("/login");
+    }
   },
 
-  compartir: (req, res) => {
-    let idNuevoProducto = 0;
-    if (!arte.length){
-      idNuevoProducto = 0
-    } else {idNuevoProducto = arte[arte.length - 1].id + 1;}
-    let nombreImagen = req.file.filename;
-    let nuevoArte = {
-      id: idNuevoProducto,
-      autor: req.body.autor,
-      obra: req.body.obra,
-      descripcion: req.body.descripcion,
-      origen: req.body.origen,
-      categoria: req.body.categoria,
-      imagen: nombreImagen,
-    };
-    arte.push(nuevoArte);
-
-    fs.writeFileSync(arteFilePath, JSON.stringify(arte, null, " "));
-    res.redirect("/cards/arte");
+  compartir: async (req, res) => {
+    if (req.session.userLogged) {
+      console.log(req.session.userLogged);
+      let idNuevoProducto = 0;
+      if (!arte.length){
+        idNuevoProducto = 0
+      } else {idNuevoProducto = arte[arte.length - 1].id + 1;}
+      if(!req.file){
+        res.redirect("/cards/arte/compartir");
+      }else{
+        let nombreImagen = req.file.filename;
+      
+      let nuevoArte = {
+        id: idNuevoProducto,
+        autor: req.body.autor,
+        obra: req.body.obra,
+        descripcion: req.body.descripcion,
+        origen: req.body.origen,
+        categoria: req.body.categoria,
+        imagen: nombreImagen,
+      };
+      arte.push(nuevoArte);
+  
+      await db.Arte.create({
+        nombre: req.body.obra,
+        imagen: nombreImagen,
+        usuarioFK: req.session.userLogged.id
+      });
+  
+  
+      fs.writeFileSync(arteFilePath, JSON.stringify(arte, null, " "));
+      res.redirect("/cards/arte");
+    }
+    } else {
+      res.redirect("/login");
+    }
   },
 
   // Vista Feed

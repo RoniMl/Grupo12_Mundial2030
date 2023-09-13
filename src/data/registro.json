@@ -38,5 +38,65 @@
   "nacimiento": "1997-10-21",
   "contrasena": "$2b$10$RxCIEbIhE7lIpn7vi.PES.WT8waWHDHn78qnS5HtEEDoJJ/kToqKu",
   "imagen": "1693936800788Captura de pantalla 2023-09-03 140039.jpg"
+ },
+ {
+  "id": 4,
+  "nombre": "asdasd",
+  "apellido": "asdasd",
+  "correo": "qweqdas@dasa",
+  "telefono": "213213",
+  "nacimiento": "2023-08-31",
+  "contrasena": "$2b$10$OovpPew0PkbLmEICgMpPMuKn/0bKdKPqdpkuPVPKvfBLUUgakTzti",
+  "imagen": "16945489940503 A.png"
+ },
+ {
+  "id": 5,
+  "nombre": "a",
+  "apellido": "asdas",
+  "correo": "qweqdas@dasa",
+  "telefono": "213213",
+  "nacimiento": "2023-08-31",
+  "contrasena": "$2b$10$.MTi0iB.XQihbcN7nLvwru1wKpkMJPpbQM3E3Wko2JAL/K3DGB2IW",
+  "imagen": "16945491336212 A.png"
+ },
+ {
+  "id": 6,
+  "nombre": "aas",
+  "apellido": "a",
+  "correo": "asdas@sadas",
+  "telefono": "5151521521215",
+  "nacimiento": "2023-09-03",
+  "contrasena": "$2b$10$XMFWjENZ0tI99SPO8GN56eu.QZTUs8IEqgADtjda.od9sazJiVXoq",
+  "imagen": "16945491939561 A.png"
+ },
+ {
+  "id": 7,
+  "nombre": "asdas",
+  "apellido": "asdasd",
+  "correo": "qweqdas@dasa",
+  "telefono": "5151521521215",
+  "nacimiento": "2023-07-06",
+  "contrasena": "$2b$10$RFTLSt71ItPn.9Dk6uyiyOrRTxAg7lYKuzh633SvAGboHAgB8kCje",
+  "imagen": "16945492874813 A.png"
+ },
+ {
+  "id": 8,
+  "nombre": "tarsasdasw",
+  "apellido": "Testeo",
+  "correo": "qweqweq@dasdas",
+  "telefono": "12315125",
+  "nacimiento": "2023-09-07",
+  "contrasena": "$2b$10$tGppSv3SiaGabr.UbSzyq.GTx/rAC4Zs4j5elQTnPAzEjBbXOBRju",
+  "imagen": "16945493858663 A.png"
+ },
+ {
+  "id": 9,
+  "nombre": "test",
+  "apellido": "test",
+  "correo": "test@test",
+  "telefono": "1234",
+  "nacimiento": "2023-09-01",
+  "contrasena": "$2b$10$C8MtPi7CY5YOjDlfTmks9uo/0V8D58ABPV1YEnXP8IMSBhr/wE2ny",
+  "imagen": "16945498254121 A.png"
  }
 ]

@@ -27,7 +27,7 @@ const controller = {
     let userFound = allUsers.find((u) => u[campo] == texto);
     return userFound;
   },
-  crearUsuario: (req, res) => {
+  crearUsuario: async (req, res) => {
     const errors = validationResult(req);
 
     if (!req.body.aceptarTerminos) {
@@ -74,24 +74,49 @@ const controller = {
       };
       usuario.push(nuevoUsuario);
 
+      //Cargo usuario en db
+      await db.Usuario.create({
+        nombre: req.body.nombre,
+        apellido: req.body.apellido,
+        correo: req.body.correo,
+        telefono: req.body.telefono,
+        nacimiento: req.body.nacimiento,
+        clave: contrasena,
+        imagen: nombreImagen
+      });
+
+
       fs.writeFileSync(usuarioFilePath, JSON.stringify(usuario, null, " "));
       res.redirect("/");
     }
   },
-  validarLogin: (req, res) => {
+  validarLogin: async (req, res) => {
     const errors = validationResult(req);
     let correoInput = req.body.correo;
     let contrasenaInput = req.body.contrasena;
 
     let usuarioValido = null;
-    for (let i = 0; i < usuario.length; i++) {
+    /*for (let i = 0; i < usuario.length; i++) {
       if (
         correoInput == usuario[i].correo &&
         bcrypt.compareSync(contrasenaInput, usuario[i].contrasena) == true
       ) {
         usuarioValido = usuario[i];
       }
+    }*/
+
+    let usuariosLista = await db.Usuario.findAll();
+    for (let i = 0; i < usuariosLista.length; i++) {
+      //console.log(usuariosLista[i]);
+      if (
+        correoInput == usuariosLista[i].correo &&
+        bcrypt.compareSync(contrasenaInput, usuariosLista[i].clave) == true
+      ) {
+        usuarioValido = usuariosLista[i];
+      }
     }
+
+    //console.log(usuarioValido);
 
     if (usuarioValido) {
       req.session.userLogged = usuarioValido;
