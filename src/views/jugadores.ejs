@@ -2,26 +2,18 @@
 <html lang="en">
   <head>
     <%- include("head") %>
-
   </head>
   <body>
     <header><%- include("header") %></header>
     <div class="container mt-5">
-        <h1 class="mb-4">Lista de Jugadores de Fútbol</h1>
-        <div class="list-group">
-          <a href="#" class="list-group-item list-group-item-action">
-            <h5 class="mb-1">Jugador 1</h5>
-            <p class="mb-1">Número: 10</p>
-            <p class="mb-0">Posición: Delantero</p>
-          </a>
-          <a href="#" class="list-group-item list-group-item-action">
-            <h5 class="mb-1">Jugador 2</h5>
-            <p class="mb-1">Número: 5</p>
-            <p class="mb-0">Posición: Defensor</p>
-          </a>
-          <!-- Agrega más jugadores aquí -->
-        </div>
-      <!-- Agrega más jugadores aquí -->
+      <h1 class="mb-4">Lista de Jugadores de Fútbol</h1>
+      <% for (let i = 0; i < 11 ; i++) { %>
+      <div class="list-group">
+        <h5 class="mb-1">
+          <%= jugadores[i].nombre%> ( <%= jugadores[i].numero_camiseta%> )
+        </h5>
+      </div>
+      <% } %>|
     </div>
   </body>
   <footer><%- include('footer') %></footer>

@@ -3,17 +3,18 @@ const fs = require("fs");
 const db = require("../database/models");
 
 const barsControllers = {
-  equipos: (req, res) => {
-    res.render(path.join(__dirname + "../../views/equipos.ejs"));
-  },
-  estadios: function (req, res) {
-    db.Estadio.findAll()
-    .then(function(estadios){
-      res.render("estadios", {estadios:estadios})
+  equipos: function (req, res) {
+    db.Pais.findAll().then(function (equipos) {
+      res.render("equipos", { equipos: equipos });
     });
   },
-  jugadores: (req, res) => {
-    res.render(path.join(__dirname + "../../views/jugadores.ejs"));
+  estadios: function (req, res) {
+    db.Estadio.findAll().then(function (estadios) {
+      res.render("estadios", { estadios: estadios });
+    });
+  },
+  jugadores: function (req, res) {
+    
   },
   partidos: (req, res) => {
     res.render(path.join(__dirname + "../../views/partidos.ejs"));
