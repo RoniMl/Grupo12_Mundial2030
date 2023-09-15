@@ -14,7 +14,12 @@ const barsControllers = {
     });
   },
   jugadores: function (req, res) {
-    
+    db.Jugador.findAll({
+      where: { paisFK: req.params.id },
+      include: [{ association: "pais" }],
+    }).then(function (jugadores) {
+      res.render("jugadores", { jugadores: jugadores });
+    });
   },
   partidos: (req, res) => {
     res.render(path.join(__dirname + "../../views/partidos.ejs"));

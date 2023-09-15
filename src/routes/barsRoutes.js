@@ -9,6 +9,6 @@ const {check} = require("express-validator");
 router.get("/equipos",barscontrollers.equipos);
 router.get("/estadios",barscontrollers.estadios);
 router.get("/partidos",barscontrollers.partidos);
-router.get("/jugadores",barscontrollers.jugadores);
+router.get("/jugadores/:id",barscontrollers.jugadores);
 
 module.exports = router;

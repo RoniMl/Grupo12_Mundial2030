@@ -9,7 +9,7 @@
       <% for (let i = 0; i< equipos.length; i++) { %>
       <div class="equipo">
         <div class="info-equipo">
-         <a href="/bars/jugadores"><h2><%= equipos[i].nombre%></h2></a>
+         <a href="/bars/jugadores/<%=equipos[i].id%>"><h2><%= equipos[i].nombre%></h2></a>
           <p>Participacion en Mundiales: <%= equipos[i].participaciones%></p>
           
         </div>
