@@ -13,12 +13,14 @@
                     <%= error.msg %>
                 </p>
                 <%}) }%>
-            <form class="FormInputs" action="/login" method="POST">
+            <form class="FormInputs" id="formularioLogearse" action="/login" method="POST" >
+                <p id="mensajeErrorEmail"></p>
                 <label for="correo">Email: </label>
-                <input type="correo" name="correo" id="correo" value="<%= locals.old && old.correo ? old.correo : '' %>"/>
+                <input type="correo" name="correo" id="correoPagLogin" value="<%= locals.old && old.correo ? old.correo : '' %>"/>
                 <br />
+                <p id="mensajeErrorContrasena"></p>
                 <label for="contrasena">Contraseña: </label>
-                <input type="password" name="contrasena" id="contrasena" />
+                <input type="password" name="contrasena" id="contrasenaPagLogin" />
                 <br />
 
                 <div>
@@ -32,6 +34,7 @@
         </body>
 
      <%- include('footer') %>
+     <script src="/javascript/loginValidaciones.js"></script>
 </body>
 
 </html>
