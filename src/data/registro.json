@@ -98,5 +98,15 @@
   "nacimiento": "2023-09-01",
   "contrasena": "$2b$10$C8MtPi7CY5YOjDlfTmks9uo/0V8D58ABPV1YEnXP8IMSBhr/wE2ny",
   "imagen": "16945498254121 A.png"
+ },
+ {
+  "id": 10,
+  "nombre": "Roni11",
+  "apellido": "Malamud",
+  "correo": "ronimalamud11@gmail.com",
+  "telefono": "1136343377",
+  "nacimiento": "2023-09-06",
+  "contrasena": "$2b$10$Ulnmm.t3Tq9Y5zAhqvjhXO3KRwda7ili2JvjcmpC9EwUOjJ6FWYyi",
+  "imagen": "1695078372380messi miami.jpeg"
  }
 ]

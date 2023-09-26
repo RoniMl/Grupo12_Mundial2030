@@ -1,61 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <%- include("head") %>
-</head>
-<body>
+  </head>
+  <body>
     <%- include("header") %>
 
     <body>
-      <div id="erroresRegistro"><%if(locals.errors){
-        errors.forEach(error => { %>
-          <p><%= error.msg %></p>
-        <%})
-      }%></div>
-        <form class="FormInputs" id="formularioRegistrarse" action="/registro" method="POST" enctype="multipart/form-data">
-            <p id="mensajeErrorNombre"></p>
-            <label >Nombre: </label>
-            <input type="text" name="nombre" id="nombrePagReg" value="<%= locals.old && old.nombre ? old.nombre : ''%>" />
-            <br />
-            <p id="mensajeErrorApellido"></p>
-            <label>Apellido: </label>
-            <input type="text" name="apellido" id="apellidoPagReg" value="<%= locals.old && old.apellido ? old.apellido : ''%>"/>
-            <br />
-            <p id="mensajeErrorCorreo"></p>
-            <label >Correo: </label>
-            <input type="email" name="correo" id="correoPagReg" value="<%= locals.old && old.correo ? old.correo : ''%>"/>
-            <br />
-            <p id="mensajeErrorTelefono"></p>
-            <label >Telefono: </label>
-            <input type="tel" name="telefono" id="telefonoPagReg" value="<%= locals.old && old.telefono ? old.telefono : ''%>"/>
-            <br />
-            <p id="mensajeErrorNacimiento"></p>
-            <label >Fecha de nacimiento: </label>
-            <input type="date" name="nacimiento" id="nacimientoPagReg" value="<%= locals.old && old.nacimiento ? old.nacimiento : ''%>"/>
-            <br />
-            <p id="mensajeErrorContrasena"></p>
-            <label >Contraseña: </label>
-            <input type="password" name="contrasena" id="contrasenaPagReg"/>
-            
-            <p id="mensajeErrorImagen"></p>
-            <label>Imagen de perfil: </label>
-            <input type="file" name="imagen" id="imagenPagReg"/>  
-            <br />
-  
-            <div>
-              <p id="mensajeErrorTerminos"></p>
-              <label for="aceptarTerminos"
-                >Acepto los terminos y condiciones:</label
-              >
-              <input type="checkbox" id="aceptarTerminosPagReg" name="aceptarTerminos" />
-            </div>
-            <br />
-            <br />
-            <button type="submit">Registrarse</button>
-          </form>
+      <div id="erroresRegistro">
+        <%if(locals.errors){ errors.forEach(error => { %>
+        <p><%= error.msg %></p>
+        <%}) }%>
+      </div>
+      <form
+        class="FormInputs"
+        id="formularioRegistrarse"
+        action="/registro"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <p id="mensajeErrorNombre"></p>
+        <label>Nombre: </label>
+        <input
+          type="text"
+          name="nombre"
+          id="nombrePagReg"
+          value="<%= locals.old && old.nombre ? old.nombre : ''%>"
+        />
+        <br />
+        <p id="mensajeErrorApellido"></p>
+        <label>Apellido: </label>
+        <input
+          type="text"
+          name="apellido"
+          id="apellidoPagReg"
+          value="<%= locals.old && old.apellido ? old.apellido : ''%>"
+        />
+        <br />
+        <p id="mensajeErrorCorreo"></p>
+        <label>Correo: </label>
+        <input
+          type="email"
+          name="correo"
+          id="correoPagReg"
+          value="<%= locals.old && old.correo ? old.correo : ''%>"
+        />
+        <br />
+        <p id="mensajeErrorTelefono"></p>
+        <label>Telefono: </label>
+        <input
+          type="tel"
+          name="telefono"
+          id="telefonoPagReg"
+          value="<%= locals.old && old.telefono ? old.telefono : ''%>"
+        />
+        <br />
+        <p id="mensajeErrorNacimiento"></p>
+        <label>Fecha de nacimiento: </label>
+        <input
+          type="date"
+          name="nacimiento"
+          id="nacimientoPagReg"
+          value="<%= locals.old && old.nacimiento ? old.nacimiento : ''%>"
+        />
+        <br />
+        <p id="mensajeErrorContrasena"></p>
+        <label>Contraseña: </label>
+        <input type="password" name="contrasena" id="contrasenaPagReg" />
+
+        <p id="mensajeErrorImagen"></p>
+        <label>Imagen de perfil: </label>
+        <input type="file" name="imagen" id="imagenPagReg" />
+        <br />
+
+        <div>
+          <p id="mensajeErrorTerminos"></p>
+          <label for="aceptarTerminos"
+            >Acepto los terminos y condiciones:</label
+          >
+          <input
+            type="checkbox"
+            id="aceptarTerminosPagReg"
+            name="aceptarTerminos"
+          />
+        </div>
+        <br />
+        <br />
+        <button type="submit">Registrarse</button>
+      </form>
     </body>
 
     <%- include('footer') %>
     <script src="/javascript/registroValidaciones.js"></script>
-</body>
+  </body>
 </html>

@@ -21,22 +21,21 @@
 }
 
 .card-arte {
-  width: 300px;
-  height: 400px;
-  border: #326295;
+  width: fit-content;
+  height: auto;
+
 }
 .arteMain {
-  margin-top: 1.5cm;
+  border-color: #326295;
   flex-direction: row;
   display: flex;
-  position:relative;
+  position: relative;
   padding: 10px;
   justify-content: center;
   width: 99%;
+  gap: 1em;
   flex-flow: row;
-  gap:1em;
-  
-
+  flex-wrap: wrap;
 }
 
 .boton-compartir{
@@ -54,6 +53,7 @@
   position: relative;
   height: 90%;
   width: 90%;
+  
 }
 
 .mainDetalles{

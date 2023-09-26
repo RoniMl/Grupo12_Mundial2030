@@ -13,10 +13,20 @@
           fanaticos de todo el mundo puedan compartir tu pasion
         </h4>
       </div>
-      <div class="container products-wrapper formulario-subir">
+      <h2 id="msgError"></h2>
+
+      <div
+        class="container products-wrapper formulario-subir"
+   
+      >
         <div class="row">
           <div class="col-12">
-            <form action="/cards/arte/compartir" method="POST" enctype="multipart/form-data">
+            <form
+              action="/cards/arte/compartir"
+              method="POST"
+              enctype="multipart/form-data"
+              id="formularioCompartir"
+            >
               <div class="row product-detail">
                 <div class="col-12 col-md-6">
                   <label for="name" class="form-label"
@@ -33,12 +43,7 @@
                   <label for="price" class="form-label"
                     >Nombre de la obra</label
                   >
-                  <input
-                    type="text"
-                    id="price"
-                    name="obra"
-                    class="form-input"
-                  />
+                  <input type="text" id="obra" name="obra" class="form-input" />
                 </div>
                 <div class="col-12 col-md-6">
                   <label for="price" class="form-label">Lugar de origen</label>
@@ -66,7 +71,12 @@
                 <label for="formFile" class="form-label"
                   >Seleccione el archivo que desea subir</label
                 >
-                <input class="form-control" name="imageProduct" type="file" id="formFile" />
+                <input
+                  class="form-control"
+                  name="imageProduct"
+                  type="file"
+                  id="formFile"
+                />
               </div>
 
               <div class="col-12">
@@ -78,10 +88,8 @@
                 ></textarea>
               </div>
 
+              <button type="submit" class="buy-now-button">Subir</button>
               <div class="col-12">
-              
-                  <button type="submit" class="buy-now-button">Subir</button>
-                
               </div>
             </form>
           </div>
@@ -95,5 +103,6 @@
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
     ></script>
+    <script src="/javascript/compartirValidaciones.js"></script>
   </body>
 </html>

@@ -6,48 +6,57 @@ const db = require("../database/models");
 
 const cardsControllers = {
   //Subir
-  
+
   subirArt: (req, res) => {
     if (req.session.userLogged) {
       res.render("compartir");
-    }else {
+    } else {
       res.redirect("/login");
     }
   },
 
   compartir: async (req, res) => {
+    console.log("entre al controller")
     if (req.session.userLogged) {
       console.log(req.session.userLogged);
       let idNuevoProducto = 0;
-      if (!arte.length){
-        idNuevoProducto = 0
-      } else {idNuevoProducto = arte[arte.length - 1].id + 1;}
-      if(!req.file){
+      if (!arte.length) {
+        idNuevoProducto = 0;
+      } else {
+        idNuevoProducto = arte[arte.length - 1].id + 1;
+      }
+      if (
+        !req.file ||
+        !req.body.autor ||
+        !req.body.obra ||
+        !req.body.descripcion ||
+        !req.body.origen ||
+        !req.body.categoria
+      ) {
         res.redirect("/cards/arte/compartir");
-      }else{
+      } else {
         let nombreImagen = req.file.filename;
-      
-      let nuevoArte = {
-        id: idNuevoProducto,
-        autor: req.body.autor,
-        obra: req.body.obra,
-        descripcion: req.body.descripcion,
-        origen: req.body.origen,
-        categoria: req.body.categoria,
-        imagen: nombreImagen,
-      };
-      arte.push(nuevoArte);
-  
-      await db.Arte.create({
-        nombre: req.body.obra,
-        imagen: nombreImagen,
-        usuarioFK: req.session.userLogged.id
-      });
-  
-  
-      fs.writeFileSync(arteFilePath, JSON.stringify(arte, null, " "));
-      res.redirect("/cards/arte");
-    }
+
+        let nuevoArte = {
+          id: idNuevoProducto,
+          autor: req.body.autor,
+          obra: req.body.obra,
+          descripcion: req.body.descripcion,
+          origen: req.body.origen,
+          categoria: req.body.categoria,
+          imagen: nombreImagen,
+        };
+        arte.push(nuevoArte);
+
+        await db.Arte.create({
+          obra: req.body.obra,
+          imagen: nombreImagen,
+          usuarioFK: req.session.userLogged.id,
+        });
+
+        fs.writeFileSync(arteFilePath, JSON.stringify(arte, null, " "));
+        res.redirect("/cards/arte");
+      }
     } else {
       res.redirect("/login");
     }
@@ -75,50 +84,59 @@ const cardsControllers = {
   editarArte: (req, res) => {
     let idArte = req.params.idArte;
 
-    for (let obj of arte) {
-      if (obj.id == idArte) {
-        obj.autor= req.body.autor;
-        obj.obra = req.body.obra;
-        obj.descripcion = req.body.descripcion;
-        obj.categoria = req.body.categoria;
-        obj.origen = req.body.origen;
-        break;
+    if (
+      !req.file ||
+      !req.body.autor ||
+      !req.body.obbra ||
+      !req.body.descripcion ||
+      !req.body.origen ||
+      !req.body.categoria
+    ) {
+      res.redirect("/cards/arte/compartir");
+    } else {
+      for (let obj of arte) {
+        if (obj.id == idArte) {
+          obj.autor = req.body.autor;
+          obj.obra = req.body.obra;
+          obj.descripcion = req.body.descripcion;
+          obj.categoria = req.body.categoria;
+          obj.origen = req.body.origen;
+          break;
+        }
       }
+      fs.writeFileSync(arteFilePath, JSON.stringify(arte, null, " "));
+      res.redirect("/cards/arte");
     }
-    fs.writeFileSync(arteFilePath, JSON.stringify(arte, null, " "));
-    res.redirect("/cards/arte");
   },
 
   //Borrar
 
-  destroy : (req, res) => {
-		let idArte = req.params.idArte;
+  destroy: (req, res) => {
+    let idArte = req.params.idArte;
 
-		let nuevoArregloarte = arte.filter(function(e){
-			return e.id != idArte;
-		});
-				
-		fs.writeFileSync(arteFilePath, JSON.stringify(nuevoArregloarte,null,''));	
-		res.redirect('/cards/arte');
-	},
+    let nuevoArregloarte = arte.filter(function (e) {
+      return e.id != idArte;
+    });
+
+    fs.writeFileSync(arteFilePath, JSON.stringify(nuevoArregloarte, null, ""));
+    res.redirect("/cards/arte");
+  },
 
   // Detalles
 
   detalles: (req, res) => {
-		let idArte = req.params.idArte;
-		let arteBuscado;
+    let idArte = req.params.idArte;
+    let arteBuscado;
 
-		for (let obj of arte){
-			if (obj.id==idArte){
-				arteBuscado=obj;
-				break;
-			}
-		}
+    for (let obj of arte) {
+      if (obj.id == idArte) {
+        arteBuscado = obj;
+        break;
+      }
+    }
 
-		res.render('detalles', {arte: arteBuscado});
-	},
-
-
+    res.render("detalles", { arte: arteBuscado });
+  },
 };
 
 module.exports = cardsControllers;

@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <%- include("head") %>
-</head>
+  </head>
 
-<body>
+  <body>
     <%- include("header") %>
-        <body>
-            <%if(locals.errors){ errors.forEach(error=> { %>
-                <p>
-                    <%= error.msg %>
-                </p>
-                <%}) }%>
-            <form class="FormInputs" id="formularioLogearse" action="/login" method="POST" >
-                <p id="mensajeErrorEmail"></p>
-                <label for="correo">Email: </label>
-                <input type="correo" name="correo" id="correoPagLogin" value="<%= locals.old && old.correo ? old.correo : '' %>"/>
-                <br />
-                <p id="mensajeErrorContrasena"></p>
-                <label for="contrasena">Contraseña: </label>
-                <input type="password" name="contrasena" id="contrasenaPagLogin" />
-                <br />
+    <body>
+      <%if(locals.errors){ errors.forEach(error=> { %>
+      <p><%= error.msg %></p>
+      <%}) }%>
+      <form
+        class="FormInputs"
+        id="formularioLogearse"
+        action="/login"
+        method="POST"
+      >
+        <p id="mensajeErrorEmail"></p>
+        <label for="correo">Email: </label>
+        <input
+          type="correo"
+          name="correo"
+          id="correoPagLogin"
+          value="<%= locals.old && old.correo ? old.correo : '' %>"
+        />
+        <br />
+        <p id="mensajeErrorContrasena"></p>
+        <label for="contrasena">Contraseña: </label>
+        <input type="password" name="contrasena" id="contrasenaPagLogin" />
+        <br />
 
-                <div>
-                    <label for="recordarme">Recordarme:</label>
-                    <input type="checkbox" id="recordarme" />
-                </div>
-                <br />
-                <br />
-                <button type="submit">Ingresar</button>
-            </form>
-        </body>
+        <div>
+          <label for="recordarme">Recordarme:</label>
+          <input type="checkbox" id="recordarme" />
+        </div>
+        <br />
+        <br />
+        <button type="submit">Ingresar</button>
+      </form>
+    </body>
 
-     <%- include('footer') %>
-     <script src="/javascript/loginValidaciones.js"></script>
-</body>
-
+    <%- include('footer') %>
+    <script src="/javascript/loginValidaciones.js"></script>
+  </body>
 </html>
