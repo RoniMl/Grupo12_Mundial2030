@@ -152,6 +152,16 @@ const controller = {
     req.session.destroy();
     res.redirect("/");
   },
+
+  apiUsuario: (req, res) => {
+    db.Usuario.findAll().then((Usuario) => {
+      return res.status(200).json({
+        data: Usuario,
+        status: 200,
+        total: Usuario.length
+      });
+    });
+  },
 };
 module.exports = controller;
 

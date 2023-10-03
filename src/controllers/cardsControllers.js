@@ -16,7 +16,7 @@ const cardsControllers = {
   },
 
   compartir: async (req, res) => {
-    console.log("entre al controller")
+    console.log("entre al controller");
     if (req.session.userLogged) {
       console.log(req.session.userLogged);
       let idNuevoProducto = 0;
@@ -136,6 +136,18 @@ const cardsControllers = {
     }
 
     res.render("detalles", { arte: arteBuscado });
+  },
+  // API traer informacion de arte
+
+  apiArte: (req, res) => {
+    db.Arte.findAll().then((Arte) => {
+      return res.status(200).json({
+        data: Arte,
+        status: 200,
+        total: Arte.length
+         
+      });
+    });
   },
 };
 

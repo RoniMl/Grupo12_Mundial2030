@@ -40,4 +40,8 @@ router.put('/arte/editar/:idArte',cardsControllers.editarArte);
 
 router.delete("/arte/editar/delete/:idArte",cardsControllers.destroy)
 
+//Api
+
+router.get("/arte/apiArte", cardsControllers.apiArte);
+
 module.exports = router;

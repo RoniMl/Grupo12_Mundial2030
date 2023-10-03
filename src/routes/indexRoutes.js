@@ -39,6 +39,11 @@ router.get("/login", controllers.login);
 router.post("/login", controllers.validarLogin);
 router.get("/cerrar-sesion", controllers.cerrarSesion);
 
+//Api info usuarios
+
+router.get("/apiUsuario", controllers.apiUsuario);
+
+
 
 module.exports = router;
 
