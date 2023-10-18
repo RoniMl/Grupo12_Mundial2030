@@ -8,6 +8,7 @@ const indexRoutes = require("./routes/indexRoutes");
 const anfitrionesRoutes = require("./routes/anfitrionesRoutes");
 const cardsRoutes = require("./routes/cardsRoutes");
 const barsRoutes = require("./routes/barsRoutes");
+const cors = require("cors")
 
 
 
@@ -45,6 +46,7 @@ app.use((req, res, next) => {
 app.use(express.static(path.join(__dirname, "../public")));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cors())
 app.use(methodOverride("_method"));
 app.use("/", indexRoutes);
 app.use("/anfitriones", anfitrionesRoutes);

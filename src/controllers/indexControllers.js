@@ -153,6 +153,8 @@ const controller = {
     res.redirect("/");
   },
 
+  // APi usuario
+
   apiUsuario: (req, res) => {
     db.Usuario.findAll().then((Usuario) => {
       return res.status(200).json({
