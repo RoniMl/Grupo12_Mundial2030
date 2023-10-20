@@ -49,7 +49,7 @@ const cardsControllers = {
         arte.push(nuevoArte);
 
         await db.Arte.create({
-          obra: req.body.obra,
+          nombre: req.body.obra,
           imagen: nombreImagen,
           usuarioFK: req.session.userLogged.id,
         });
