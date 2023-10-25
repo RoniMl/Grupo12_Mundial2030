@@ -1,7 +1,8 @@
 .titulo-art {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  color: #326295;
+  color: #ffffff;
   text-align: center;
+  
 }
 
 .descripcion {
@@ -18,7 +19,12 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: #326295;
   font-size: x-large;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
 }
+
+
 
 .card-arte {
   width: fit-content;
