@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 const path = require('path');
 
 module.exports 	= {
@@ -8,4 +7,4 @@ config: path.resolve('./src/database/config', 'config.js'),
 'seeders-path': path.resolve('./src/database/seeders'),
 'migrations-path': path.resolve('./src/database/migrations'),
 }
->>>>>>> f5cf5004bebf08948caf2e850c094d1175af09e0
+

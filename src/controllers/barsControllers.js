@@ -21,9 +21,10 @@ const barsControllers = {
       res.render("jugadores", { jugadores: jugadores });
     });
   },
-  partidos: (req, res) => {
-    res.render(path.join(__dirname + "../../views/partidos.ejs"));
-  },
+  valores: (req, res) => {
+    res.render(path.join(__dirname + "../../views/valores.ejs"));
+  }
+
 };
 
 module.exports = barsControllers;
