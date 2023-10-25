@@ -17,6 +17,7 @@
   display: flex;
   align-items: end;
   color: #326295;
+  
 }
 
 .header-abajo {
@@ -79,6 +80,8 @@
   text-align: center;
   text-decoration: none;
   display: none;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 
