@@ -7,11 +7,14 @@
     <header><%- include("header") %></header>
     <main>
       <% for (let i = 0; i< estadios.length; i++) { %>
-      <div class="equipo">
-        <div class="info-equipo">
-          <h2><%= estadios[i].nombre%></h2>
-          <p>Capacidad: <%= estadios[i].capacidad%></p>
-          <p><%= estadios[i].direccion%></p>
+      <div class="estadio">
+        <div class="card text-bg-dark">
+          <img src="<%= estadios[i].imagen%>" class="foto-estadio" alt="">
+          <div class="card-img-overlay">
+            <h5 class="card-title"><%= estadios[i].nombre%></h5>
+            <p class="card-text">Capacidad: <%= estadios[i].capacidad%></p>
+            <p class="card-text"><small></small></p>
+          </div>
         </div>
       </div>
       <% } %>
@@ -24,3 +27,5 @@
     </main>
   </body>
 </html>
+
+

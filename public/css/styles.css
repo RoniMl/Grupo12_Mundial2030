@@ -1,3 +1,9 @@
+body {
+  background-image: url("https://static1.pocketlintimages.com/wordpress/wp-content/uploads/144863-tv-news-how-to-watch-england-play-in-4k-image6-wxyhqlziap.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .logo {
   align-items: center;
   justify-content: center;
@@ -377,7 +383,7 @@
 /*TICKETS----------------------------*/
 
 .compraEntradas{
-  background-color: #EAEAEA;
+ 
   padding-top: 15px;
   padding-bottom: 30px;
 }
@@ -533,4 +539,18 @@ margin-right: 2.5%;
  font-size: larger;
  align-items: center;
  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.estadio{
+  justify-content: center;
+  flex-direction: row;
+  width: auto;
+  position:relative;
+  margin-left: 40%;
+}
+
+.foto-estadio{
+  width: 1200px;
+  justify-content: center;
+  height: 700px ;
 }
