@@ -544,13 +544,26 @@ margin-right: 2.5%;
 .estadio{
   justify-content: center;
   flex-direction: row;
-  width: auto;
+  width: 99%;
+  max-width: 640px;
   position:relative;
-  margin-left: 40%;
+  display: flex;
+  flex-flow: row;
+  padding: 20px;
+  stroke:black;
 }
 
 .foto-estadio{
-  width: 1200px;
-  justify-content: center;
-  height: 700px ;
+  width: 640px;
+  height: 450px;
+}
+
+.estadios-main{ 
+    display: flex;
+    gap: 3em;
+    justify-content: center;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
 }

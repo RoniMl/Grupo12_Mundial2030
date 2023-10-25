@@ -6,18 +6,20 @@
   <body>
     <header><%- include("header") %></header>
     <main>
+      <div class="estadios-main">
       <% for (let i = 0; i< estadios.length; i++) { %>
       <div class="estadio">
         <div class="card text-bg-dark">
           <img src="<%= estadios[i].imagen%>" class="foto-estadio" alt="">
           <div class="card-img-overlay">
-            <h5 class="card-title"><%= estadios[i].nombre%></h5>
-            <p class="card-text">Capacidad: <%= estadios[i].capacidad%></p>
+            <h1 class="card-title" width="200px"><%= estadios[i].nombre%></h1>
+            <h4 class="card-text">Capacidad: <%= estadios[i].capacidad%></h4>
             <p class="card-text"><small></small></p>
           </div>
         </div>
       </div>
       <% } %>
+    </div>
       <footer><%- include('footer') %></footer>
       <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
