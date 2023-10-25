@@ -401,7 +401,8 @@ body {
 
 .formularioInfoPago,
 .resumenEntradas,
-.formularioCompra{
+.formularioCompra,
+.loginEstilo{
   background-color: lightblue;
   padding: 20px;
   max-width: 80%;

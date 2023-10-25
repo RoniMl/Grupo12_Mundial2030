@@ -5,8 +5,8 @@
   </head>
   <body>
     <%- include("header") %>
-
-    <body>
+    <br>
+    <div class="loginEstilo">
       <div id="erroresRegistro">
         <%if(locals.errors){ errors.forEach(error => { %>
         <p><%= error.msg %></p>
@@ -88,8 +88,8 @@
         <br />
         <button type="submit">Registrarse</button>
       </form>
-    </body>
-
+    </div>
+    <br>
     <%- include('footer') %>
     <script src="/javascript/registroValidaciones.js"></script>
   </body>
