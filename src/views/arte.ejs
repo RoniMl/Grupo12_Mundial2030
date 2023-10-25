@@ -30,6 +30,7 @@
                 <i class="fa-regular fa-heart"></i>
               </button>
             </form>
+            <% if(usuarioLogeado && usuarioLogeado.id == arte[i].usuarioFK){%>
             <form>
               <a href="/cards/arte/editar/<%=arte[i].id%>">
               <button type="button" class="btn btn-success">
@@ -37,6 +38,7 @@
               </button>
               </a>
             </form>
+            <% } %>
             <form>
               <a href="/cards/arte/detalles/<%= arte[i].id %>">
               <button type="button" class="btn btn-info">

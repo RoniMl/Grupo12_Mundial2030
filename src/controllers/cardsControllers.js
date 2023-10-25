@@ -45,6 +45,7 @@ const cardsControllers = {
           origen: req.body.origen,
           categoria: req.body.categoria,
           imagen: nombreImagen,
+          usuarioFK: req.session.userLogged.id,
         };
         arte.push(nuevoArte);
 
@@ -64,7 +65,7 @@ const cardsControllers = {
 
   // Vista Feed
   arte: (req, res) => {
-    res.render("arte", { arte: arte });
+    res.render("arte", { arte: arte});
   },
 
   //Editar o borrar vista
@@ -78,16 +79,16 @@ const cardsControllers = {
         break;
       }
     }
-
+    console.log("ENTRE A ANTES DE EDITAR")
     res.render("editar", { arteEnEdicion: arteBuscado });
   },
-  editarArte: (req, res) => {
+  editarArte: async (req, res) => {
+    console.log("ENTRE A EDITARARTE")
     let idArte = req.params.idArte;
 
     if (
-      !req.file ||
       !req.body.autor ||
-      !req.body.obbra ||
+      !req.body.obra ||
       !req.body.descripcion ||
       !req.body.origen ||
       !req.body.categoria
@@ -104,6 +105,12 @@ const cardsControllers = {
           break;
         }
       }
+      
+
+      await db.Arte.update({
+        nombre: req.body.obra,
+      },{
+        where: {id: idArte}});
       fs.writeFileSync(arteFilePath, JSON.stringify(arte, null, " "));
       res.redirect("/cards/arte");
     }

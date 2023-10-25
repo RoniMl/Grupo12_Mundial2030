@@ -34,7 +34,7 @@ router.get("/arte/detalles/:idArte", cardsControllers.detalles);
 //Editar
 
 router.get('/arte/editar/:idArte',cardsControllers.editarVista); 
-router.put('/arte/editar/:idArte',cardsControllers.editarArte); 
+router.post('/arte/editar/:idArte',cardsControllers.editarArte); 
 
 //Borrar
 
