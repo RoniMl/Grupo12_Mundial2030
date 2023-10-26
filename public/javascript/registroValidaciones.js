@@ -78,9 +78,10 @@ validarRegistro.addEventListener("submit", function(e){
 
 
     if(errorRegistro == 0){
-       // validarRegistro.submit();
+        validarRegistro.submit();
+        alert.apply("")
     }else{
-        return;
+        return ;
     }
 
 

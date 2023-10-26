@@ -108,5 +108,35 @@
   "nacimiento": "2023-09-06",
   "contrasena": "$2b$10$Ulnmm.t3Tq9Y5zAhqvjhXO3KRwda7ili2JvjcmpC9EwUOjJ6FWYyi",
   "imagen": "1695078372380messi miami.jpeg"
+ },
+ {
+  "id": 11,
+  "nombre": "Angel",
+  "apellido": "DiMaria",
+  "correo": "Fideo@gmail.com",
+  "telefono": "11223344",
+  "nacimiento": "2023-01-11",
+  "contrasena": "$2b$10$9LVKN4dgucu1KK3SqC58T.1SldoWXGhg5hhhxRjNx1fOVgZ9eAKIS",
+  "imagen": "1698353411471messi miami.jpeg"
+ },
+ {
+  "id": 12,
+  "nombre": "Angel",
+  "apellido": "Di Maria",
+  "correo": "Fideo@gmail.com",
+  "telefono": "11223344",
+  "nacimiento": "2023-10-05",
+  "contrasena": "$2b$10$rfbb8VsAGoegT9AXAXnRQOt4e/cpcwoJOhYxLjLD22qitLy6S1LnO",
+  "imagen": "1698356266859Fideo DIMaria.jpeg"
+ },
+ {
+  "id": 13,
+  "nombre": "Fideo",
+  "apellido": "Di maria",
+  "correo": "Fideos@gmail.com",
+  "telefono": "11223344",
+  "nacimiento": "2023-10-12",
+  "contrasena": "$2b$10$TYi63zhtzP3YJGtHSYvXK.jf3F3JBhD0n8klZRFSRAzM77I0ynYim",
+  "imagen": "1698358096399messi miami.jpeg"
  }
 ]
